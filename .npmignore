@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+
+# TypeScript source (use src/ instead)
+*.ts
+!src/**/*.ts
+
+# Development files
+tsconfig.json
+__pycache__/
+*.map
+
+# Logs
+log/
+*.log
+
+# Git
+.git/
+.gitignore
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp
+*.tmp
+*.temp
+/tmp/

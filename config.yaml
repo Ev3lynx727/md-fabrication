@@ -1,0 +1,54 @@
+# md-fabrication configuration
+# Standalone config for the micromark humanization tool.
+# articpub-ai aggregates this + md-analyzer config into its own unified config.
+
+tool: md-fabrication
+
+voice:
+  default: professional
+  profiles:
+    casual:
+      contractions: true
+      transitions: true
+      passiveToActive: true
+      conjunctionSoftening: true
+      pacing: true
+      repetitivePhrases: true
+      vocabularyDiversity: true
+      hedgePhrases: true
+      conjunctionStarts: true
+      sentenceVariety: true
+    professional:
+      contractions: false
+      transitions: true
+      passiveToActive: true
+      conjunctionSoftening: true
+      pacing: true
+      repetitivePhrases: true
+      vocabularyDiversity: true
+      hedgePhrases: true
+      conjunctionStarts: false
+      sentenceVariety: true
+    technical:
+      contractions: false
+      transitions: false
+      passiveToActive: true
+      conjunctionSoftening: false
+      pacing: false
+      repetitivePhrases: true
+      vocabularyDiversity: true
+      hedgePhrases: false
+      conjunctionStarts: false
+      sentenceVariety: false
+
+budget:
+  default: 50000
+  max: 100000
+
+session:
+  file: /tmp/md-fabrication-session.json
+
+# Timezone for NLP date parsing (default: UTC)
+# Set to your local timezone (e.g., "Asia/Jakarta", "America/New_York")
+# to match compromise-dates output with your region.
+timezone: UTC

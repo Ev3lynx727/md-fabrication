@@ -1,0 +1,26 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.fabricateText = exports.varySentenceOpenings = exports.addConjunctionStarts = exports.hedgeAbsoluteStatements = exports.diversifyVocabulary = exports.removeRepetitivePhrases = exports.adjustPacing = exports.addTransitions = exports.applyContractions = exports.passiveToActive = exports.softenConjunctions = void 0;
+var conjunctions_js_1 = require("./conjunctions.js");
+Object.defineProperty(exports, "softenConjunctions", { enumerable: true, get: function () { return conjunctions_js_1.softenConjunctions; } });
+var passive_js_1 = require("./passive.js");
+Object.defineProperty(exports, "passiveToActive", { enumerable: true, get: function () { return passive_js_1.passiveToActive; } });
+var contractions_js_1 = require("./contractions.js");
+Object.defineProperty(exports, "applyContractions", { enumerable: true, get: function () { return contractions_js_1.applyContractions; } });
+var transitions_js_1 = require("./transitions.js");
+Object.defineProperty(exports, "addTransitions", { enumerable: true, get: function () { return transitions_js_1.addTransitions; } });
+var pacing_js_1 = require("./pacing.js");
+Object.defineProperty(exports, "adjustPacing", { enumerable: true, get: function () { return pacing_js_1.adjustPacing; } });
+var repetitive_js_1 = require("./repetitive.js");
+Object.defineProperty(exports, "removeRepetitivePhrases", { enumerable: true, get: function () { return repetitive_js_1.removeRepetitivePhrases; } });
+var vocabulary_js_1 = require("./vocabulary.js");
+Object.defineProperty(exports, "diversifyVocabulary", { enumerable: true, get: function () { return vocabulary_js_1.diversifyVocabulary; } });
+var hedging_js_1 = require("./hedging.js");
+Object.defineProperty(exports, "hedgeAbsoluteStatements", { enumerable: true, get: function () { return hedging_js_1.hedgeAbsoluteStatements; } });
+var conjunction_starts_js_1 = require("./conjunction-starts.js");
+Object.defineProperty(exports, "addConjunctionStarts", { enumerable: true, get: function () { return conjunction_starts_js_1.addConjunctionStarts; } });
+var sentence_variety_js_1 = require("./sentence-variety.js");
+Object.defineProperty(exports, "varySentenceOpenings", { enumerable: true, get: function () { return sentence_variety_js_1.varySentenceOpenings; } });
+var fabricate_js_1 = require("./fabricate.js");
+Object.defineProperty(exports, "fabricateText", { enumerable: true, get: function () { return fabricate_js_1.fabricateText; } });
+//# sourceMappingURL=index.js.map

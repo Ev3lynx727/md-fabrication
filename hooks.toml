@@ -1,0 +1,52 @@
+[tool.md-fabrication]
+name = "md-fabrication"
+description = "Humanize LLM-generated markdown into natural, readable prose — tone, pacing, transitions, voice"
+
+[tool.md-fabrication.capabilities]
+capabilities = [
+  "Read and fabricate markdown files",
+  "Extract YAML frontmatter",
+  "Apply sentence variety transformations",
+  "Add natural transitions between paragraphs",
+  "Enforce consistent voice (casual / professional / technical)",
+  "Adjust pacing with short/long sentence patterns",
+  "Replace conjunction sequences (Firstly, Secondly...)",
+  "Convert passive to active voice",
+  "Apply contractions for casual tone",
+  "Dry-run mode to preview changes without writing",
+  "Track session token budget"
+]
+
+[tool.md-fabrication.config]
+# Default voice
+default_voice = "professional"
+
+# Session file
+session_file = "/tmp/md-fabrication-session.json"
+
+# Token budget configuration
+default_budget = 50000
+max_tokens = 100000
+
+# Output safety (prevent token blowout)
+max_results_default = 20
+
+[tool.md-fabrication.flags]
+json = "Output as JSON"
+apply = "Write changes in-place"
+dry_run = "Show diff without writing"
+voice = "Target voice: casual, professional, technical (default: professional)"
+session = "Show session token budget stats"
+budget = "Set token budget limit (default: 50000)"
+help = "Show help message"
+
+[tool.md-fabrication.examples]
+analyze = "node md-fabrication.js article.md --json"
+apply_changes = "node md-fabrication.js article.md --apply --voice casual --json"
+dry_run = "node md-fabrication.js article.md --dry-run --voice professional --json"
+session_tracking = "node md-fabrication.js article.md --session --budget 50000 --json"
+
+[tool.md-fabrication.agent_use_case]
+pre_post_humanize = "Use --apply --voice casual to humanize a draft before publishing"
+quality_check = "Use --json to analyze an article and see fabricate suggestions"
+safe_fabricate = "Use --dry-run to preview changes before --apply"

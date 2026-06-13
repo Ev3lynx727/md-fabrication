@@ -1,0 +1,35 @@
+[
+  {
+    "timestamp": "2026-06-12T20:13:54.866Z",
+    "sessionId": "session-1781295234468",
+    "file": "_ghost_update.md",
+    "voice": "casual",
+    "changes": 42,
+    "changesApplied": false,
+    "tokensUsed": 1995,
+    "durationMs": 400,
+    "mode": "analyze"
+  },
+  {
+    "timestamp": "2026-06-12T20:13:59.900Z",
+    "sessionId": "session-1781295234468",
+    "file": "_ghost_update.md",
+    "voice": "casual",
+    "changes": 42,
+    "changesApplied": false,
+    "tokensUsed": 1988,
+    "durationMs": 374,
+    "mode": "dry-run"
+  },
+  {
+    "timestamp": "2026-06-12T20:14:49.875Z",
+    "sessionId": "session-1781295234468",
+    "file": "/home/ev3lynx/dev/articpub-ai/_ghost_update.md",
+    "voice": "casual",
+    "changes": 43,
+    "changesApplied": false,
+    "tokensUsed": 1999,
+    "durationMs": 373,
+    "mode": "dry-run"
+  }
+]
