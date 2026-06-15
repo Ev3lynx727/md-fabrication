@@ -40,6 +40,17 @@ voice:
       hedgePhrases: false
       conjunctionStarts: false
       sentenceVariety: false
+    personal-branding:
+      contractions: false
+      transitions: false
+      passiveToActive: true
+      conjunctionSoftening: true
+      pacing: true
+      repetitivePhrases: true
+      vocabularyDiversity: true
+      hedgePhrases: true
+      conjunctionStarts: false
+      sentenceVariety: true
 
 budget:
   default: 50000

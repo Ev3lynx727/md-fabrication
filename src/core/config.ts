@@ -4,7 +4,13 @@ import * as yaml from 'js-yaml'
 import { VoiceConfig } from './types.js'
 import { PROJECT_ROOT } from './resolve-root.js'
 
-const CONFIG_PATH = path.join(PROJECT_ROOT, 'config.yaml')
+function resolveConfigPath(): string {
+  const cwdConfig = path.join(process.cwd(), 'config.yaml')
+  if (fs.existsSync(cwdConfig)) return cwdConfig
+  return path.join(PROJECT_ROOT, 'config.yaml')
+}
+
+const CONFIG_PATH = resolveConfigPath()
 
 let VOICE_CONFIG: VoiceConfig | null = null
 let TIMEZONE: string | null = null
@@ -26,7 +32,8 @@ export function loadVoiceConfig(): VoiceConfig {
       profiles: {
         professional: { contractions: false, transitions: true, passiveToActive: true, conjunctionSoftening: true, pacing: true, repetitivePhrases: true, vocabularyDiversity: false, hedgePhrases: false, conjunctionStarts: false, sentenceVariety: false },
         casual: { contractions: true, transitions: true, passiveToActive: true, conjunctionSoftening: true, pacing: true, repetitivePhrases: true, vocabularyDiversity: false, hedgePhrases: false, conjunctionStarts: false, sentenceVariety: false },
-        technical: { contractions: false, transitions: false, passiveToActive: true, conjunctionSoftening: false, pacing: false, repetitivePhrases: true, vocabularyDiversity: false, hedgePhrases: false, conjunctionStarts: false, sentenceVariety: false }
+        technical: { contractions: false, transitions: false, passiveToActive: true, conjunctionSoftening: false, pacing: false, repetitivePhrases: true, vocabularyDiversity: false, hedgePhrases: false, conjunctionStarts: false, sentenceVariety: false },
+        'personal-branding': { contractions: false, transitions: true, passiveToActive: true, conjunctionSoftening: true, pacing: true, repetitivePhrases: true, vocabularyDiversity: true, hedgePhrases: true, conjunctionStarts: true, sentenceVariety: true }
       }
     }
     return VOICE_CONFIG
