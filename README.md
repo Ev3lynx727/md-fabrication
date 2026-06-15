@@ -96,7 +96,7 @@ md-fabrication ./docs --backlinks README
 | `--json` | Output as JSON | `--json` |
 | `--apply` | Write changes in-place | `--apply` |
 | `--dry-run` | Show diff without writing (colorized) | `--dry-run` |
-| `--voice <voice>` | Target voice: casual, professional, technical | `--voice casual` |
+| `--voice <voice>` | Target voice: casual, professional, technical, personal-branding | `--voice personal-branding` |
 | `--session` | Token budget report | `--session` |
 | `--budget <n>` | Set token budget limit | `--budget 50000` |
 | `--graph` | Build document relationship graph for a directory | `md-fabrication ./docs --graph` |
@@ -157,13 +157,28 @@ voice:
       sentenceVariety: false
 ```
 
-To add a new voice (e.g. `storyteller`), add a profile block to `config.yaml` — no code changes needed.
+To add a new voice, add a profile block to `config.yaml` — no code changes needed.
 
 | Voice | Contractions | Transitions | Passive→Active | Conjunctions | Pacing | Repetitive | Vocabulary | Hedge | Conj Starts | Sentence Variety |
 |-------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | `casual` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | `professional` | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | ✅ |
 | `technical` | ❌ | ❌ | ✅ | ❌ | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| `personal-branding` | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+
+### Personal Branding Voice
+
+The `personal-branding` voice encodes the **CTO+CEO+Storyteller blend** — authoritative without being stiff, narrative without being casual. Designed for engineering thought leadership and technical memoir.
+
+All transformations active except contractions: short punchy sentences, active voice, conjunction starts for narrative flow, hedge phrases for strategic softening, natural transitions between ideas.
+
+```bash
+# Polish an article for personal brand / thought leadership
+md-fabrication article.md --apply --voice personal-branding --json
+
+# Preview changes first
+md-fabrication article.md --dry-run --voice personal-branding
+```
 
 ### Examples
 
@@ -179,6 +194,9 @@ md-fabrication article.md --apply --voice professional --json
 
 # Preview changes first
 md-fabrication article.md --dry-run --voice casual --json
+
+# Personal-branding polish
+md-fabrication article.md --apply --voice personal-branding --json
 
 # Track token usage
 md-fabrication article.md --session --budget 50000 --json
