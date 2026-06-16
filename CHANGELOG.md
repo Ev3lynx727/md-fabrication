@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.6.1] - 2026-06-17
+
+### Added
+
+- Phase 3 cleanup pipeline — collapes multiple spaces, capitalizes orphaned lowercase after sentence-ending punctuation (`. ! ?`)
+- `removeBannedWords` transform with dataset-backed severity-gated replace mode (high severity only in `replace` mode)
+
+### Changed
+
+- Pipeline reordered into 3 explicit phases: Phase 1 (Promote: additive enrichment), Phase 2 (Replace: strict pattern fixes), Phase 3 (Cleanup: whitespace + recase)
+- `removeBannedWords` moved to Phase 2, running before `applyContractions` and `diversifyVocabulary` — multi-word banned phrases (e.g. "it is important to note that") now caught intact
+- `applyContractions` moved from Phase 1 to Phase 2 — prevents contraction of "it is" → "it's" before banned phrase match
+- `diversifyVocabulary` moved from Phase 1 to Phase 2 — runs after banned word removal to avoid replacing words that should be deleted
+
+### Fixed
+
+- Multi-word banned phrases broken by Phase 1 transforms running first — contractions were shortening "it is important to note that" to "it's important to note that" before `removeBannedWords` could match
+- Double spaces and orphaned lowercase after phrase removal (e.g., ".  this" → ". This")
+
 ## [0.6.0] - 2026-06-16
 
 ### Added
