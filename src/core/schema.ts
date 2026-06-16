@@ -9,6 +9,7 @@ export const FabricateArgs = z.object({
   json: z.boolean().default(false),
   budget: z.coerce.number().int().positive().default(50000),
   session: z.boolean().default(false),
+  lintFix: z.boolean().default(false),
 })
 
 export const GraphArgs = z.object({

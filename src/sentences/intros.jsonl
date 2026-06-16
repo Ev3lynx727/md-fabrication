@@ -1,0 +1,6 @@
+{"id": "intro-001", "phrase": "In practice,", "triggers": ["^The ", "^This "], "weight": 0.3}
+{"id": "intro-002", "phrase": "Notably,", "triggers": ["^The ", "^This "], "weight": 0.3}
+{"id": "intro-003", "phrase": "Specifically,", "triggers": ["^The ", "^This "], "weight": 0.3}
+{"id": "intro-004", "phrase": "In many cases,", "triggers": ["^The ", "^This "], "weight": 0.3}
+{"id": "intro-005", "phrase": "Typically,", "triggers": ["^The ", "^This "], "weight": 0.3}
+{"id": "intro-006", "phrase": "Fundamentally,", "triggers": ["^The ", "^This "], "weight": 0.3}

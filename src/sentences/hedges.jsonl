@@ -1,0 +1,6 @@
+{"id": "hedge-001", "pattern": "always", "replacement": "often", "confidence": 0.7, "tags": ["absolute"]}
+{"id": "hedge-002", "pattern": "never", "replacement": "rarely", "confidence": 0.7, "tags": ["absolute"]}
+{"id": "hedge-003", "pattern": "everyone", "replacement": "many", "confidence": 0.6, "tags": ["generalization"]}
+{"id": "hedge-004", "pattern": "no one", "replacement": "few", "confidence": 0.6, "tags": ["generalization"]}
+{"id": "hedge-005", "pattern": "impossible", "replacement": "challenging", "confidence": 0.5, "tags": ["certainty"]}
+{"id": "hedge-006", "pattern": "everybody", "replacement": "most", "confidence": 0.6, "tags": ["generalization"]}

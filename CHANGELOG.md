@@ -4,6 +4,10 @@
 
 ### Added
 
+- `markdownlint` v0.41.0 post-transform validation — `lintMarkdown()` runs after every `fabricateText()`, JSON output includes `lint` field with issue counts
+- `--lint-fix` (`--lint`) flag on `fabricate` command — auto-patches markdown syntax issues via `fixMarkdown()`, reports `lintFixed` count in output
+- `fixMarkdown()` export — applies markdownlint `fixInfo` in reverse line/column order to avoid offset corruption
+- `markdownlint/sync` local type declarations in `src/types/markdownlint.d.ts` — avoids `.mts` resolution issue with `moduleResolution: "node"`
 - Pre-fork enhancement phase — stabilize module before forking into articpub-ai
 - Real mode transforms for blog (blank-line collapse + H1), newsletter (TL;DR auto-extract + blank collapse), tutorial (Prerequisites section + H1), landing (single blank-line collapse + H1)
 - Input validation for `--voice` flag — warns on unknown voice names

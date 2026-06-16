@@ -3,6 +3,7 @@
 import { program } from 'commander'
 import * as fs from 'fs'
 import * as path from 'path'
+import { execSync } from 'child_process'
 import { AsciiTable3 } from 'ascii-table3'
 import { loadVoiceConfig, getValidVoices, getTimezone, getTomlConfig } from '../core/config.js'
 import { extractFrontmatter } from '../core/frontmatter.js'
@@ -12,6 +13,7 @@ import { gatherFragments, buildDepGraph, assembleFragments, assembleTrilogy } fr
 import { lintDirectory } from '../core/lint.js'
 import { editDocs, updateIndex, updateLog, linkUp, ingest } from '../core/wiki.js'
 import { fabricateText } from '../transforms/fabricate.js'
+import { lintMarkdown, fixMarkdown } from '../transforms/lint.js'
 import { countTokens } from '../core/helpers.js'
 import { getMode as resolveMode } from '../modes/index.js'
 import {
@@ -83,10 +85,11 @@ export function main(): void {
     .option('-j, --json', 'Output as JSON')
     .option('-b, --budget <n>', 'Token budget limit')
     .option('-s, --session', 'Show token budget report')
+    .option('-l, --lint-fix', 'Auto-fix markdownlint issues after transforms')
     .action((file: string, opts: Record<string, unknown>) => {
       const startTime = Date.now()
       const parsed = FabricateArgs.parse({ file, ...opts })
-      const { voice, mode: modeName, dryRun, apply, json: jsonOnly, budget, session: sessionMode } = parsed
+      const { voice, mode: modeName, dryRun, apply, json: jsonOnly, budget, session: sessionMode, lintFix } = parsed
 
       if (!fs.existsSync(file)) {
         if (jsonOnly) console.log(JSON.stringify({ file, error: 'file_not_found' }))
@@ -121,12 +124,16 @@ export function main(): void {
 
       const { transformed, summary } = fabricateText(modeTransformed, profile)
       const totalChanges = summary.sentencesRestructured + summary.transitionsAdded + summary.contractionsApplied + summary.passiveToActive + summary.conjunctionSoftened + summary.pacingAdjusted + summary.vocabularyDiversified + summary.hedgePhrasesInjected + summary.conjunctionStartsAdded + summary.sentenceOpeningsVaried
-      const tokensAfter = countTokens(raw + transformed)
+      const lintResult = lintMarkdown(transformed)
+      const hasLintIssues = lintResult.issues.length > 0
+      const { fixed: lintFixed, fixCount: lintFixCount } = lintFix ? fixMarkdown(transformed) : { fixed: transformed, fixCount: 0 }
+      const outputContent = lintFix ? lintFixed : transformed
+      const tokensAfter = countTokens(raw + outputContent)
 
       if (dryRun) {
         const diffLines: string[] = []
         const origLines = markdownContent.split('\n')
-        const newLines = transformed.split('\n')
+        const newLines = outputContent.split('\n')
         const maxLen = Math.max(origLines.length, newLines.length)
         for (let i = 0; i < maxLen; i++) {
           if (origLines[i] !== newLines[i]) {
@@ -134,26 +141,28 @@ export function main(): void {
             if (newLines[i] !== undefined) diffLines.push('+ ' + newLines[i])
           }
         }
-        const result = { file, fileName: path.basename(file, '.md'), voice: resolvedVoice, mode: activeMode.name, totalChanges, changesApplied: false, summary, tokensUsed: tokensAfter, diff: diffLines.slice(0, 100) }
+        const result = { file, fileName: path.basename(file, '.md'), voice: resolvedVoice, mode: activeMode.name, totalChanges, changesApplied: false, summary, tokensUsed: tokensAfter, lint: lintResult, lintFixed: lintFixCount, diff: diffLines.slice(0, 100) }
         if (jsonOnly) console.log(JSON.stringify(result, null, 2))
         else {
           console.log('Dry-run for ' + file + ' (voice: ' + resolvedVoice + ', mode: ' + activeMode.name + ')')
           console.log(renderSummaryTable(summary))
+          if (hasLintIssues) console.log('Lint: ' + lintResult.errorCount + ' errors, ' + lintResult.warningCount + ' warnings')
+          if (lintFixCount > 0) console.log('Lint fixes applied: ' + lintFixCount)
           diffLines.forEach((l: string) => { if (l.startsWith('- ')) console.log(RED + l + RESET); else if (l.startsWith('+ ')) console.log(GREEN + l + RESET); else console.log(l) })
           console.log('Tokens: ' + tokensAfter)
         }
         recordRun(file, resolvedVoice, totalChanges, false, tokensAfter, Date.now() - startTime, 'dry-run')
       } else if (apply) {
-        const newContent = raw + transformed
+        const newContent = raw + outputContent
         fs.writeFileSync(file, newContent, 'utf-8')
-        const result = { file, fileName: path.basename(file, '.md'), voice: resolvedVoice, mode: activeMode.name, totalChanges, changesApplied: true, summary, tokensUsed: tokensAfter }
+        const result = { file, fileName: path.basename(file, '.md'), voice: resolvedVoice, mode: activeMode.name, totalChanges, changesApplied: true, summary, tokensUsed: tokensAfter, lint: lintResult, lintFixed: lintFixCount }
         if (jsonOnly) console.log(JSON.stringify(result, null, 2))
-        else { console.log('Fabricated ' + file); console.log(renderSummaryTable(summary)); console.log(totalChanges + ' changes applied'); console.log('Tokens: ' + tokensAfter) }
+        else { console.log('Fabricated ' + file); console.log(renderSummaryTable(summary)); if (hasLintIssues) console.log('Lint: ' + lintResult.errorCount + ' errors, ' + lintResult.warningCount + ' warnings'); if (lintFixCount > 0) console.log('Lint fixes applied: ' + lintFixCount); console.log(totalChanges + ' changes applied'); console.log('Tokens: ' + tokensAfter) }
         recordRun(file, resolvedVoice, totalChanges, true, tokensAfter, Date.now() - startTime, 'apply')
       } else {
-        const result = { file, fileName: path.basename(file, '.md'), voice: resolvedVoice, mode: activeMode.name, totalChanges, changesApplied: false, summary, tokensUsed: tokensAfter }
+        const result = { file, fileName: path.basename(file, '.md'), voice: resolvedVoice, mode: activeMode.name, totalChanges, changesApplied: false, summary, tokensUsed: tokensAfter, lint: lintResult, lintFixed: lintFixCount }
         if (jsonOnly) console.log(JSON.stringify(result, null, 2))
-        else { console.log(renderSummaryTable(summary)); console.log('Tokens: ' + tokensAfter); console.log('Use --apply or --dry-run') }
+        else { console.log(renderSummaryTable(summary)); if (hasLintIssues) console.log('Lint: ' + lintResult.errorCount + ' errors, ' + lintResult.warningCount + ' warnings'); if (lintFixCount > 0) console.log('Lint fixes applied: ' + lintFixCount); console.log('Tokens: ' + tokensAfter); console.log('Use --apply or --dry-run') }
         recordRun(file, resolvedVoice, totalChanges, false, tokensAfter, Date.now() - startTime, 'analyze')
       }
     })
@@ -416,6 +425,80 @@ export function main(): void {
       const parsed = SessionArgs.parse(opts)
       const session = loadSession()
       console.log(JSON.stringify(getTokenBudgetReport(session, parsed.budget), null, 2))
+    })
+
+  // --- datasets ---
+  program.command('datasets')
+    .description('Manage sentence datasets (seed, update, status)')
+    .option('-u, --update', 'Fetch sources, extract, write JSONL, copy to dist')
+    .option('-c, --check', 'Dry-run: check upstream without writing')
+    .option('-s, --status', 'Show dataset record counts and timestamps')
+    .action((opts: { update?: boolean; check?: boolean; status?: boolean }) => {
+      const rootDir = path.join(__dirname, '..', '..', '..')
+      const scriptsDir = path.join(rootDir, 'scripts', 'extract')
+      const sentencesDir = path.join(rootDir, 'src', 'sentences')
+      const distEsm = path.join(rootDir, 'dist', 'esm', 'sentences')
+      const distCjs = path.join(rootDir, 'dist', 'cjs', 'sentences')
+
+      if (opts.status) {
+        const datasets = ['conjunctions.jsonl', 'transitions.jsonl', 'intros.jsonl', 'conjunction-starts.jsonl', 'vocabulary.jsonl', 'hedges.jsonl']
+        for (const file of datasets) {
+          const filePath = path.join(sentencesDir, file)
+          if (fs.existsSync(filePath)) {
+            const lines = fs.readFileSync(filePath, 'utf-8').split('\n').filter(l => l.trim()).length
+            const stat = fs.statSync(filePath)
+            const date = stat.mtime.toISOString().slice(0, 10)
+            console.log(`\u2713  ${file.padEnd(25)} ${String(lines).padStart(6)} records  (last update: ${date})`)
+          } else {
+            console.log(`\u2717  ${file.padEnd(25)} \u2014  NOT SEEDED`)
+          }
+        }
+        return
+      }
+
+      if (opts.check) {
+        console.log('Dry-run: checking upstream sources...')
+        console.log('  [1/6] WordNet    \u2192 vocabulary.jsonl         (check: https://wordnet.princeton.edu)')
+        console.log('  [2/6] Discovery  \u2192 transitions.jsonl        (check: https://github.com/sileod/Discovery)')
+        console.log('  [3/6] Discovery  \u2192 conjunctions.jsonl       (check: curated seed)')
+        console.log('  [4/6] Discovery  \u2192 conjunction-starts.jsonl (check: curated seed)')
+        console.log('  [5/6] Discovery  \u2192 intros.jsonl             (check: curated seed)')
+        console.log('  [6/6] words/hedges \u2192 hedges.jsonl          (check: https://github.com/words/hedges)')
+        console.log('Run `mdfab datasets --update` to write datasets.')
+        return
+      }
+
+      if (opts.update) {
+        const scripts = ['vocab-from-wordnet.py', 'transitions-from-discovery.py', 'conjunctions-from-discovery.py', 'cs-from-discovery.py', 'intros-from-discovery.py', 'hedges-from-words.py']
+        for (const script of scripts) {
+          const scriptPath = path.join(scriptsDir, script)
+          if (fs.existsSync(scriptPath)) {
+            execSync(`python3 "${scriptPath}"`, { stdio: 'inherit', cwd: path.join(scriptsDir, '..', '..') })
+          } else {
+            console.log(`${script} not found, skipping`)
+          }
+        }
+
+        if (fs.existsSync(distEsm)) {
+          if (!fs.existsSync(distEsm)) fs.mkdirSync(distEsm, { recursive: true })
+          if (!fs.existsSync(distCjs)) fs.mkdirSync(distCjs, { recursive: true })
+          execSync(`cp ${sentencesDir}/*.jsonl ${distEsm}/ && cp ${sentencesDir}/*.jsonl ${distCjs}/`, { stdio: 'inherit' })
+          console.log('Copied JSONL files to dist/')
+        }
+
+        console.log('\nSummary:')
+        const header = `  ${'Dataset'.padEnd(25)} ${'Records'.padStart(8)}`
+        console.log(header)
+        console.log('  ' + '\u2500'.repeat(34))
+        const datasets = ['conjunctions.jsonl', 'transitions.jsonl', 'intros.jsonl', 'conjunction-starts.jsonl', 'vocabulary.jsonl', 'hedges.jsonl']
+        for (const file of datasets) {
+          const filePath = path.join(sentencesDir, file)
+          if (fs.existsSync(filePath)) {
+            const lines = fs.readFileSync(filePath, 'utf-8').split('\n').filter(l => l.trim()).length
+            console.log(`  ${file.padEnd(25)} ${String(lines).padStart(8)}`)
+          }
+        }
+      }
     })
 
   program.parse()

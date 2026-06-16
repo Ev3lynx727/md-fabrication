@@ -1,0 +1,4 @@
+{"id": "cs-001", "word": "And", "weight": 0.35, "tags": ["additive"]}
+{"id": "cs-002", "word": "But", "weight": 0.35, "tags": ["contrast"]}
+{"id": "cs-003", "word": "So", "weight": 0.2, "tags": ["consequential"]}
+{"id": "cs-004", "word": "Yet", "weight": 0.1, "tags": ["contrast", "subtle"]}

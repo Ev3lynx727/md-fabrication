@@ -10,7 +10,8 @@
     "mdfab": "./dist/cjs/cli/index.js"
   },
   "scripts": {
-    "build": "npm run build:cjs && npm run build:esm",
+    "build": "npm run build:cjs && npm run build:esm && npm run build:copy",
+    "build:copy": "mkdir -p dist/esm/sentences dist/cjs/sentences && cp src/sentences/*.jsonl dist/esm/sentences/ && cp src/sentences/*.jsonl dist/cjs/sentences/",
     "build:cjs": "tsc --project tsconfig.cjs.json",
     "build:esm": "tsc --project tsconfig.esm.json",
     "typecheck": "tsc --noEmit --project tsconfig.cjs.json",
@@ -55,6 +56,11 @@
       "require": "./dist/cjs/transforms/index.js",
       "types": "./dist/cjs/transforms/index.d.ts"
     },
+    "./sentences": {
+      "import": "./dist/esm/sentences/index.js",
+      "require": "./dist/cjs/sentences/index.js",
+      "types": "./dist/cjs/sentences/index.d.ts"
+    },
     "./modes": {
       "import": "./dist/esm/modes/index.js",
       "require": "./dist/cjs/modes/index.js",
@@ -72,6 +78,7 @@
     "dependency-graph": "^1.0.0",
     "js-tiktoken": "^1.0.0",
     "js-yaml": "^4.2.0",
+    "markdownlint": "^0.41.0",
     "zod": "^3.24.0"
   },
   "devDependencies": {
@@ -85,6 +92,7 @@
   "files": [
     "dist/",
     "src/",
+    "src/sentences/*.jsonl",
     "hooks.toml",
     "config.yaml",
     "README.md",
