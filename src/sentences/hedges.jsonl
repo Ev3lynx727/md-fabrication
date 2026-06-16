@@ -4,3 +4,166 @@
 {"id": "hedge-004", "pattern": "no one", "replacement": "few", "confidence": 0.6, "tags": ["generalization"]}
 {"id": "hedge-005", "pattern": "impossible", "replacement": "challenging", "confidence": 0.5, "tags": ["certainty"]}
 {"id": "hedge-006", "pattern": "everybody", "replacement": "most", "confidence": 0.6, "tags": ["generalization"]}
+{"id": "hedge-007", "pattern": "export const hedges = [", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-008", "pattern": "a bit", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-009", "pattern": "about", "replacement": "", "confidence": 0.5, "tags": ["approximator", "linguistic-hedge"]}
+{"id": "hedge-010", "pattern": "actually", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-011", "pattern": "allege", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-012", "pattern": "alleged", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-013", "pattern": "almost", "replacement": "", "confidence": 0.5, "tags": ["approximator", "linguistic-hedge"]}
+{"id": "hedge-014", "pattern": "almost never", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-015", "pattern": "always", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-016", "pattern": "and all that", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-017", "pattern": "and so forth", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-018", "pattern": "apparent", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-019", "pattern": "apparently", "replacement": "", "confidence": 0.5, "tags": ["evidential", "linguistic-hedge"]}
+{"id": "hedge-020", "pattern": "appear", "replacement": "", "confidence": 0.5, "tags": ["evidential", "linguistic-hedge"]}
+{"id": "hedge-021", "pattern": "appear to be", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-022", "pattern": "appeared", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-023", "pattern": "appears", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-024", "pattern": "approximately", "replacement": "", "confidence": 0.5, "tags": ["approximator", "linguistic-hedge"]}
+{"id": "hedge-025", "pattern": "around", "replacement": "", "confidence": 0.5, "tags": ["approximator", "linguistic-hedge"]}
+{"id": "hedge-026", "pattern": "assume", "replacement": "", "confidence": 0.5, "tags": ["adaptor", "linguistic-hedge"]}
+{"id": "hedge-027", "pattern": "assumed", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-028", "pattern": "assumes", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-029", "pattern": "assumption", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-030", "pattern": "at least", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-031", "pattern": "basically", "replacement": "", "confidence": 0.5, "tags": ["shielder", "linguistic-hedge"]}
+{"id": "hedge-032", "pattern": "be sure", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-033", "pattern": "believe", "replacement": "", "confidence": 0.5, "tags": ["adaptor", "linguistic-hedge"]}
+{"id": "hedge-034", "pattern": "believed", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-035", "pattern": "believes", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-036", "pattern": "bunch", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-037", "pattern": "can", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-038", "pattern": "certain", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-039", "pattern": "certainly", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-040", "pattern": "clear", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-041", "pattern": "clearly", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-042", "pattern": "conceivably", "replacement": "", "confidence": 0.5, "tags": ["plausibility", "linguistic-hedge"]}
+{"id": "hedge-043", "pattern": "consider", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-044", "pattern": "considered", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-045", "pattern": "considers", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-046", "pattern": "consistent with", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-047", "pattern": "could", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-048", "pattern": "couple", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-049", "pattern": "definite", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-050", "pattern": "definitely", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-051", "pattern": "diagnostic", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-052", "pattern": "don't know", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-053", "pattern": "doubt", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-054", "pattern": "doubtful", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-055", "pattern": "effectively", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-056", "pattern": "estimate", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-057", "pattern": "estimated", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-058", "pattern": "estimates", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-059", "pattern": "et cetera", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-060", "pattern": "evidently", "replacement": "", "confidence": 0.5, "tags": ["evidential", "linguistic-hedge"]}
+{"id": "hedge-061", "pattern": "fairly", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-062", "pattern": "few", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-063", "pattern": "find", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-064", "pattern": "finds", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-065", "pattern": "found", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-066", "pattern": "frequently", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-067", "pattern": "generally", "replacement": "", "confidence": 0.5, "tags": ["shielder", "linguistic-hedge"]}
+{"id": "hedge-068", "pattern": "guess", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-069", "pattern": "guessed", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-070", "pattern": "guesses", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-071", "pattern": "hopefully", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-072", "pattern": "if i'm understanding you correctly", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-073", "pattern": "improbable", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-074", "pattern": "in general", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-075", "pattern": "in my mind", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-076", "pattern": "in my opinion", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-077", "pattern": "in my understanding", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-078", "pattern": "in my view", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-079", "pattern": "inconclusive", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-080", "pattern": "indicate", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-081", "pattern": "kind of", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-082", "pattern": "largely", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-083", "pattern": "like", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-084", "pattern": "likely", "replacement": "", "confidence": 0.5, "tags": ["plausibility", "linguistic-hedge"]}
+{"id": "hedge-085", "pattern": "little", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-086", "pattern": "look like", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-087", "pattern": "looks like", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-088", "pattern": "mainly", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-089", "pattern": "many", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-090", "pattern": "may", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-091", "pattern": "maybe", "replacement": "", "confidence": 0.5, "tags": ["plausibility", "linguistic-hedge"]}
+{"id": "hedge-092", "pattern": "might", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-093", "pattern": "more or less", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-094", "pattern": "most", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-095", "pattern": "mostly", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-096", "pattern": "much", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-097", "pattern": "must", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-098", "pattern": "my impression", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-099", "pattern": "my thinking is", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-100", "pattern": "my understanding is", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-101", "pattern": "necessarily", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-102", "pattern": "occasionally", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-103", "pattern": "often", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-104", "pattern": "overall", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-105", "pattern": "partially", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-106", "pattern": "perhaps", "replacement": "", "confidence": 0.5, "tags": ["plausibility", "linguistic-hedge"]}
+{"id": "hedge-107", "pattern": "possibility", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-108", "pattern": "possible", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-109", "pattern": "possibly", "replacement": "", "confidence": 0.5, "tags": ["plausibility", "linguistic-hedge"]}
+{"id": "hedge-110", "pattern": "practically", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-111", "pattern": "presumable", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-112", "pattern": "presumably", "replacement": "", "confidence": 0.5, "tags": ["evidential", "linguistic-hedge"]}
+{"id": "hedge-113", "pattern": "pretty", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-114", "pattern": "probability", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-115", "pattern": "probable", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-116", "pattern": "probably", "replacement": "", "confidence": 0.5, "tags": ["plausibility", "linguistic-hedge"]}
+{"id": "hedge-117", "pattern": "quite", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-118", "pattern": "quite clearly", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-119", "pattern": "rare", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-120", "pattern": "rarely", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-121", "pattern": "rather", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-122", "pattern": "read", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-123", "pattern": "really", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-124", "pattern": "roughly", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-125", "pattern": "say", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-126", "pattern": "says", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-127", "pattern": "seem", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-128", "pattern": "seemed", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-129", "pattern": "seems", "replacement": "", "confidence": 0.5, "tags": ["evidential", "linguistic-hedge"]}
+{"id": "hedge-130", "pattern": "seldom", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-131", "pattern": "several", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-132", "pattern": "should", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-133", "pattern": "so far", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-134", "pattern": "some", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-135", "pattern": "somebody", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-136", "pattern": "somehow", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-137", "pattern": "someone", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-138", "pattern": "something", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-139", "pattern": "something or other", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-140", "pattern": "sometimes", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-141", "pattern": "somewhat", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-142", "pattern": "somewhere", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-143", "pattern": "sort of", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-144", "pattern": "speculate", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-145", "pattern": "speculated", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-146", "pattern": "speculates", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-147", "pattern": "suggest", "replacement": "", "confidence": 0.5, "tags": ["adaptor", "linguistic-hedge"]}
+{"id": "hedge-148", "pattern": "suggested", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-149", "pattern": "suggestive", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-150", "pattern": "suggests", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-151", "pattern": "suppose", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-152", "pattern": "supposed", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-153", "pattern": "supposedly", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-154", "pattern": "supposes", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-155", "pattern": "surely", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-156", "pattern": "tend", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-157", "pattern": "their impression", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-158", "pattern": "think", "replacement": "", "confidence": 0.5, "tags": ["adaptor", "linguistic-hedge"]}
+{"id": "hedge-159", "pattern": "thinks", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-160", "pattern": "thought", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-161", "pattern": "understand", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-162", "pattern": "understands", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-163", "pattern": "understood", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-164", "pattern": "unlikely", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-165", "pattern": "unsure", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-166", "pattern": "usually", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-167", "pattern": "virtually", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-168", "pattern": "will", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}
+{"id": "hedge-169", "pattern": "would", "replacement": "", "confidence": 0.5, "tags": ["hedge", "linguistic-hedge"]}

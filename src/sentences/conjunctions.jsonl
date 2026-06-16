@@ -1,9 +1,13 @@
 {"id": "conj-001", "trigger": "Firstly", "result": "First", "tags": ["sequencing", "soften"], "priority": 1}
 {"id": "conj-002", "trigger": "Secondly", "result": "Second", "tags": ["sequencing", "soften"], "priority": 1}
 {"id": "conj-003", "trigger": "Thirdly", "result": "Third", "tags": ["sequencing", "soften"], "priority": 1}
-{"id": "conj-004", "trigger": "Fourthly", "result": "Fourth", "tags": ["sequencing", "soften"], "priority": 1}
-{"id": "conj-005", "trigger": "Lastly", "result": "Finally", "tags": ["closing", "soften"], "priority": 2}
-{"id": "conj-006", "trigger": "In conclusion", "result": "To wrap up", "tags": ["closing", "soften"], "priority": 2}
-{"id": "conj-007", "trigger": "Moreover", "result": "What's more", "tags": ["additive", "soften"], "priority": 1}
-{"id": "conj-008", "trigger": "Furthermore", "result": "Beyond that", "tags": ["additive", "soften"], "priority": 1}
-{"id": "conj-009", "trigger": "Additionally", "result": "Also", "tags": ["additive", "soften"], "priority": 1}
+{"id": "conj-004", "trigger": "Lastly", "result": "Finally", "tags": ["closing", "soften"], "priority": 2}
+{"id": "conj-005", "trigger": "Moreover", "result": "What's more", "tags": ["additive", "soften"], "priority": 1}
+{"id": "conj-006", "trigger": "Furthermore", "result": "Beyond that", "tags": ["additive", "soften"], "priority": 1}
+{"id": "conj-007", "trigger": "Additionally", "result": "Also", "tags": ["additive", "soften"], "priority": 1}
+{"id": "conj-008", "trigger": "Nevertheless", "result": "Even so", "tags": ["additive", "soften"], "priority": 2}
+{"id": "conj-009", "trigger": "Nonetheless", "result": "Still", "tags": ["additive", "soften"], "priority": 2}
+{"id": "conj-010", "trigger": "Consequently", "result": "As a result", "tags": ["consequence", "soften"], "priority": 2}
+{"id": "conj-011", "trigger": "Therefore", "result": "So", "tags": ["consequence", "soften"], "priority": 2}
+{"id": "conj-012", "trigger": "Thus", "result": "That means", "tags": ["consequence", "soften"], "priority": 2}
+{"id": "conj-013", "trigger": "Hence", "result": "From there", "tags": ["consequence", "soften"], "priority": 2}

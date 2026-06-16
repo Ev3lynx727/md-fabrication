@@ -2,3 +2,9 @@
 {"id": "cs-002", "word": "But", "weight": 0.35, "tags": ["contrast"]}
 {"id": "cs-003", "word": "So", "weight": 0.2, "tags": ["consequential"]}
 {"id": "cs-004", "word": "Yet", "weight": 0.1, "tags": ["contrast", "subtle"]}
+{"id": "cs-005", "word": "Also", "weight": 0.15, "tags": ["additive"]}
+{"id": "cs-006", "word": "Or", "weight": 0.05, "tags": ["alternative"]}
+{"id": "cs-007", "word": "Plus", "weight": 0.08, "tags": ["additive", "informal"]}
+{"id": "cs-008", "word": "Still", "weight": 0.1, "tags": ["continuative"]}
+{"id": "cs-009", "word": "Then", "weight": 0.1, "tags": ["sequential"]}
+{"id": "cs-010", "word": "Though", "weight": 0.08, "tags": ["concessive"]}

@@ -42,3 +42,28 @@ export interface HedgeEntry {
   confidence: number
   tags: string[]
 }
+
+export interface RepetitiveEntry {
+  id: string
+  phrase: string
+  replacement: string
+  confidence: number
+  category: string
+  source: string
+}
+
+export interface ContractionEntry {
+  id: string
+  full: string
+  contracted: string
+  confidence: number
+  tags: string[]
+}
+
+export interface BannedWordEntry {
+  id: string
+  phrase: string
+  category: string
+  replacement: string
+  severity: string
+}

@@ -58,6 +58,15 @@ npm install
 npm run build
 ```
 
+### Python dependencies (datasets)
+
+Some extraction scripts (for `mdfab datasets --update`) require Python packages:
+
+```bash
+cd micromark/md-fabrication/scripts
+pip install -r requirements.txt
+```
+
 ### Quick test
 
 ```bash
@@ -77,13 +86,14 @@ All operations are invoked as subcommands. Every subcommand supports `--json` fo
 
 | Command | Description |
 |---------|-------------|
-| `fabricate` (alias `f`) | Humanize a markdown file with voice + mode transforms |
+| `fabricate` (alias `f`) | Humanize a markdown file with voice + mode transforms + lint auto-fix |
 | `graph` | Build document relationship graph for a directory |
 | `orphans` | Find orphan documents (no inbound/outbound links) |
 | `image-map` | Categorize all images (local/remote/bucket/broken) |
 | `backlinks <doc> <dir>` | Find documents linking to a specific file |
 | `assemble` | Compile wiki fragments into article (DAG-based) |
-| `lint` | Validate wiki fragments for issues |
+| `lint` | markdownlint on single files; fragment lint + markdownlint per `.md` on directories |
+| `datasets` | Manage sentence datasets (fetch, extract, status) |
 | `edit-docs` | Infer and prepend frontmatter for fragments missing it |
 | `update-index` | Regenerate index.md page catalog |
 | `update-log` | Append timestamped entry to log.md |
@@ -103,6 +113,7 @@ All operations are invoked as subcommands. Every subcommand supports `--json` fo
 | `-j, --json` | Output as JSON | `--json` |
 | `-b, --budget <n>` | Set token budget limit | `--budget 50000` |
 | `-s, --session` | Token budget report | `--session` |
+| `-l, --lint-fix` | Auto-fix markdownlint issues after transforms | `--lint-fix` |
 
 ### `assemble` Options
 
@@ -114,6 +125,54 @@ All operations are invoked as subcommands. Every subcommand supports `--json` fo
 | `-t, --trilogy` | Split into 3 parts by DAG depth (requires `--dry-run` or `--apply`) |
 | `-e, --enhance` | Add series nav, combined TOC, part metadata (with `--trilogy`) |
 | `-j, --json` | Output as JSON |
+
+### `lint` Options
+
+| Flag | Description |
+|------|-------------|
+| `-f, --fix` | Auto-fix markdownlint issues in-place |
+| `-j, --json` | Output structured JSON |
+
+**Single file mode** — runs `markdownlint` on one `.md` and returns issues with error/warning counts.
+
+**Directory mode** — runs fragment lint (broken links, missing frontmatter, cycles) + `markdownlint` per `.md` file.
+
+#### Lint JSON output (single file)
+
+```json
+{
+  "file": "doc.md",
+  "issues": [
+    { "lineNumber": 3, "ruleNames": ["MD047"], "ruleDescription": "File should end with a newline", "errorRange": [3, 1], "fixInfo": { "insertText": "\n" } }
+  ],
+  "errorCount": 1,
+  "warningCount": 0,
+  "fixed": 0,
+  "durationMs": 12
+}
+```
+
+#### Directory JSON output
+
+```json
+{
+  "directory": "sources/",
+  "fragmentIssues": { "cycles": [], "brokenLinks": [], "missingFrontmatter": ["old-notes.md"] },
+  "markdownlintIssues": { "totalErrors": 3, "totalWarnings": 7, "files": 12 },
+  "errors": 3,
+  "warnings": 7,
+  "infos": 0,
+  "durationMs": 145
+}
+```
+
+### `datasets` Options
+
+| Flag | Description |
+|------|-------------|
+| `-s, --status` | Show record counts and timestamps per dataset |
+| `-c, --check` | Dry-run: check upstream availability without writing |
+| `-u, --update` | Fetch sources, extract sentences, write JSONL, copy to `dist/` |
 
 ### `ingest` Options
 
@@ -213,6 +272,22 @@ mdfab fabricate article.md --dry-run --voice casual --json
 # Personal-branding polish
 mdfab fabricate article.md --apply --voice personal-branding --json
 
+# Apply transforms + auto-fix markdown issues
+mdfab fabricate article.md --apply --lint-fix --json
+
+# Mode transforms + markdownlint
+mdfab fabricate article.md --apply --mode blog --lint-fix
+
+# Lint a single file with auto-fix
+mdfab lint doc.md --fix
+
+# Lint an entire directory (fragment lint + markdownlint)
+mdfab lint sources/ --json
+
+# Dataset management
+mdfab datasets --status
+mdfab datasets --update
+
 # Track token usage
 mdfab session --budget 50000 --json
 
@@ -234,8 +309,11 @@ mdfab assemble sources/ --voice casual --apply
 mdfab assemble sources/ --trilogy --dry-run --json
 mdfab assemble sources/ --trilogy --enhance --dry-run --json
 
-# Lint wiki fragments
+# Lint wiki fragments (directory mode)
 mdfab lint sources/ --json
+
+# Single file lint with auto-fix
+mdfab lint assembled.md --json --fix
 
 # Preview DAG order
 mdfab gather sources/
@@ -286,7 +364,13 @@ mdfab ingest raw/article.md --target sources/
     "conjunctionStartsAdded": 1,
     "sentenceOpeningsVaried": 2
   },
-  "tokensUsed": 1500
+  "tokensUsed": 1500,
+  "lint": {
+    "issues": [],
+    "errorCount": 0,
+    "warningCount": 0
+  },
+  "lintFixed": 0
 }
 ```
 

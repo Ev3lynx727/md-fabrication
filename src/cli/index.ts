@@ -76,16 +76,25 @@ export function main(): void {
   // --- fabricate ---
   program.command('fabricate')
     .alias('f')
-    .description('Fabricate/humanize a markdown file')
+    .description('Humanize markdown text with voice profiles, mode transforms, and lint auto-fix')
     .argument('<file>', '.md file to process')
-    .option('-v, --voice <voice>', 'Target voice profile')
+    .option('-v, --voice <voice>', 'Target voice profile (professional, casual, technical, personal-branding)')
     .option('-m, --mode <mode>', 'Apply mode transforms (default, readme, blog, changelog, newsletter, tutorial, landing)')
-    .option('-d, --dry-run', 'Preview changes without writing')
+    .option('-d, --dry-run', 'Preview diff without writing')
     .option('-a, --apply', 'Write changes in-place')
-    .option('-j, --json', 'Output as JSON')
+    .option('-j, --json', 'Output structured JSON')
     .option('-b, --budget <n>', 'Token budget limit')
     .option('-s, --session', 'Show token budget report')
     .option('-l, --lint-fix', 'Auto-fix markdownlint issues after transforms')
+    .addHelpText('after', `
+Examples:
+  $ mdfab f doc.md --dry-run              Preview voice transforms
+  $ mdfab f doc.md --apply --lint-fix     Apply transforms + fix markdown
+  $ mdfab f doc.md --apply --mode blog    Blog-specific transform pipeline
+  $ mdfab f doc.md --voice technical      Use technical voice profile
+  $ mdfab f doc.md --dry-run --json       Structured JSON output
+  $ mdfab f doc.md --lint-fix --dry-run   Preview lint fixes only
+    `)
     .action((file: string, opts: Record<string, unknown>) => {
       const startTime = Date.now()
       const parsed = FabricateArgs.parse({ file, ...opts })
@@ -305,10 +314,21 @@ export function main(): void {
 
   // --- lint ---
   program.command('lint')
-    .description('Validate markdown files — fragment lint for directories, markdownlint for single files')
+    .description(`Validate markdown with markdownlint
+
+  Single file — runs markdownlint on one .md
+  Directory  — fragment lint + markdownlint per .md`)
     .argument('<target>', 'File or directory to lint')
-    .option('-j, --json', 'Output as JSON')
-    .option('-f, --fix', 'Auto-fix markdownlint issues')
+    .option('-f, --fix', 'Auto-fix markdownlint issues in-place')
+    .option('-j, --json', 'Output structured JSON')
+    .addHelpText('after', `
+Examples:
+  $ mdfab lint doc.md              Lint a single file
+  $ mdfab lint doc.md --fix        Auto-fix all fixable issues
+  $ mdfab lint .                   Lint all .md in current directory
+  $ mdfab lint . --json            JSON aggregated report
+  $ mdfab lint . --json --fix      JSON report + auto-fix
+    `)
     .action((target: string, opts: { json?: boolean; fix?: boolean }) => {
       const startTime = Date.now()
       const parsed = LintArgs.parse({ target, ...opts })
@@ -510,10 +530,19 @@ export function main(): void {
 
   // --- datasets ---
   program.command('datasets')
-    .description('Manage sentence datasets (seed, update, status)')
-    .option('-u, --update', 'Fetch sources, extract, write JSONL, copy to dist')
-    .option('-c, --check', 'Dry-run: check upstream without writing')
+    .description(`Manage sentence datasets
+
+  Fetch upstream sources, extract sentences, write JSONL to src/sentences/,
+  and copy to dist/ for runtime consumption.`)
     .option('-s, --status', 'Show dataset record counts and timestamps')
+    .option('-c, --check', 'Dry-run: check upstream availability without writing')
+    .option('-u, --update', 'Fetch sources, extract, write JSONL, copy to dist')
+    .addHelpText('after', `
+Examples:
+  $ mdfab datasets --status      Show record counts for all datasets
+  $ mdfab datasets --check       Dry-run upstream availability
+  $ mdfab datasets --update      Fetch, extract, and write datasets
+    `)
     .action((opts: { update?: boolean; check?: boolean; status?: boolean }) => {
       const rootDir = path.join(__dirname, '..', '..', '..')
       const scriptsDir = path.join(rootDir, 'scripts', 'extract')
@@ -522,7 +551,7 @@ export function main(): void {
       const distCjs = path.join(rootDir, 'dist', 'cjs', 'sentences')
 
       if (opts.status) {
-        const datasets = ['conjunctions.jsonl', 'transitions.jsonl', 'intros.jsonl', 'conjunction-starts.jsonl', 'vocabulary.jsonl', 'hedges.jsonl']
+        const datasets = ['conjunctions.jsonl', 'transitions.jsonl', 'intros.jsonl', 'conjunction-starts.jsonl', 'vocabulary.jsonl', 'hedges.jsonl', 'repetitive.jsonl', 'contractions.jsonl', 'banned-words.jsonl']
         for (const file of datasets) {
           const filePath = path.join(sentencesDir, file)
           if (fs.existsSync(filePath)) {
@@ -539,22 +568,25 @@ export function main(): void {
 
       if (opts.check) {
         console.log('Dry-run: checking upstream sources...')
-        console.log('  [1/6] WordNet    \u2192 vocabulary.jsonl         (check: https://wordnet.princeton.edu)')
-        console.log('  [2/6] Discovery  \u2192 transitions.jsonl        (check: https://github.com/sileod/Discovery)')
-        console.log('  [3/6] Discovery  \u2192 conjunctions.jsonl       (check: curated seed)')
-        console.log('  [4/6] Discovery  \u2192 conjunction-starts.jsonl (check: curated seed)')
-        console.log('  [5/6] Discovery  \u2192 intros.jsonl             (check: curated seed)')
-        console.log('  [6/6] words/hedges \u2192 hedges.jsonl          (check: https://github.com/words/hedges)')
+        console.log('  [1/9] WordNet    \u2192 vocabulary.jsonl         (check: https://wordnet.princeton.edu)')
+        console.log('  [2/9] Discovery  \u2192 transitions.jsonl        (check: https://github.com/sileod/Discovery)')
+        console.log('  [3/9] Discovery  \u2192 conjunctions.jsonl       (check: curated seed)')
+        console.log('  [4/9] Discovery  \u2192 conjunction-starts.jsonl (check: curated seed)')
+        console.log('  [5/9] Discovery  \u2192 intros.jsonl             (check: curated seed)')
+        console.log('  [6/9] words/hedges \u2192 hedges.jsonl          (check: https://github.com/words/hedges)')
+        console.log('  [7/9] multiple     \u2192 repetitive.jsonl       (check: Humanize-Text, Kimble, MS Wordiness)')
+        console.log('  [8/9] node-contractions \u2192 contractions.jsonl (check: https://github.com/JamesHight/node-contractions)')
+        console.log('  [9/9] curated      \u2192 banned-words.jsonl     (check: b1rdmania/plain-english-skill)')
         console.log('Run `mdfab datasets --update` to write datasets.')
         return
       }
 
       if (opts.update) {
-        const scripts = ['vocab-from-wordnet.py', 'transitions-from-discovery.py', 'conjunctions-from-discovery.py', 'cs-from-discovery.py', 'intros-from-discovery.py', 'hedges-from-words.py']
+        const scripts = ['vocab-from-wordnet.py', 'transitions-from-discovery.py', 'conjunctions-from-discovery.py', 'cs-from-discovery.py', 'intros-from-discovery.py', 'hedges-from-words.py', 'repetitive-from-plain-english.py', 'contractions-from-upstream.py', 'banned-words-from-sources.py']
         for (const script of scripts) {
           const scriptPath = path.join(scriptsDir, script)
           if (fs.existsSync(scriptPath)) {
-            execSync(`python3 "${scriptPath}"`, { stdio: 'inherit', cwd: path.join(scriptsDir, '..', '..') })
+            execSync(`python3.10 "${scriptPath}"`, { stdio: 'inherit', cwd: path.join(scriptsDir, '..', '..') })
           } else {
             console.log(`${script} not found, skipping`)
           }
@@ -571,7 +603,7 @@ export function main(): void {
         const header = `  ${'Dataset'.padEnd(25)} ${'Records'.padStart(8)}`
         console.log(header)
         console.log('  ' + '\u2500'.repeat(34))
-        const datasets = ['conjunctions.jsonl', 'transitions.jsonl', 'intros.jsonl', 'conjunction-starts.jsonl', 'vocabulary.jsonl', 'hedges.jsonl']
+        const datasets = ['conjunctions.jsonl', 'transitions.jsonl', 'intros.jsonl', 'conjunction-starts.jsonl', 'vocabulary.jsonl', 'hedges.jsonl', 'repetitive.jsonl', 'contractions.jsonl', 'banned-words.jsonl']
         for (const file of datasets) {
           const filePath = path.join(sentencesDir, file)
           if (fs.existsSync(filePath)) {

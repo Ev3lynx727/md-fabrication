@@ -1,16 +1,14 @@
+import { repetitive } from '../sentences/index.js'
+
+const patterns: [RegExp, string][] = repetitive
+  .filter(e => e.phrase && e.replacement)
+  .map(e => [new RegExp('\\b' + escapeRegex(e.phrase) + '\\b', 'gi'), e.replacement])
+
+function escapeRegex(s: string): string {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+}
+
 export function removeRepetitivePhrases(text: string): { result: string; changes: number } {
-  const patterns: [RegExp, string][] = [
-    [/In order to\b/gi, 'To'],
-    [/Due to the fact that\b/gi, 'Because'],
-    [/At the end of the day\b/gi, 'Ultimately'],
-    [/In the event that\b/gi, 'If'],
-    [/On a daily basis\b/gi, 'Daily'],
-    [/In a timely manner\b/gi, 'Promptly'],
-    [/The vast majority of\b/gi, 'Most'],
-    [/A significant number of\b/gi, 'Many'],
-    [/Is able to\b/gi, 'Can'],
-    [/Has the ability to\b/gi, 'Can'],
-  ]
   let result = text
   let changes = 0
   for (const [pattern, replacement] of patterns) {

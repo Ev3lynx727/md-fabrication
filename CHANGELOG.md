@@ -4,6 +4,13 @@
 
 ### Added
 
+- 3 new sentence datasets: `repetitive.jsonl` (378 records, upstream: Humanize-Text + Kimble + MS Wordiness), `contractions.jsonl` (133 records, upstream: JamesHight/node-contractions), `banned-words.jsonl` (70 records, upstream: b1rdmania/plain-english-skill)
+- `scripts/extract/repetitive-from-plain-english.py` — fetches verbose→concise pairs from 3 upstream sources
+- `scripts/extract/contractions-from-upstream.py` — parses JS word-lookup, reverses for contraction direction
+- `scripts/extract/banned-words-from-sources.py` — curated AI-slop and plain-English violation lists
+- `RepetitiveEntry`, `ContractionEntry`, `BannedWordEntry` types in `src/sentences/types.ts`
+- `repetitive`, `contractions`, `bannedWords` exports in `src/sentences/index.ts`
+- CLI datasets commands extended from 6→9 datasets (status, check, update)
 - `markdownlint` v0.41.0 post-transform validation — `lintMarkdown()` runs after every `fabricateText()`, JSON output includes `lint` field with issue counts
 - `--lint-fix` (`--lint`) flag on `fabricate` command — auto-patches markdown syntax issues via `fixMarkdown()`, reports `lintFixed` count in output
 - `fixMarkdown()` export — applies markdownlint `fixInfo` in reverse line/column order to avoid offset corruption

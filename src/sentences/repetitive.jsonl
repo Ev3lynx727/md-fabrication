@@ -1,0 +1,378 @@
+{"phrase": "in order to", "replacement": "to", "confidence": 0.95, "category": "verbose", "source": "seed"}
+{"phrase": "due to the fact that", "replacement": "because", "confidence": 0.95, "category": "verbose", "source": "seed"}
+{"phrase": "at the end of the day", "replacement": "ultimately", "confidence": 0.8, "category": "cliche", "source": "seed"}
+{"phrase": "in the event that", "replacement": "if", "confidence": 0.9, "category": "verbose", "source": "seed"}
+{"phrase": "on a daily basis", "replacement": "daily", "confidence": 0.9, "category": "verbose", "source": "seed"}
+{"phrase": "in a timely manner", "replacement": "promptly", "confidence": 0.8, "category": "verbose", "source": "seed"}
+{"phrase": "the vast majority of", "replacement": "most", "confidence": 0.9, "category": "verbose", "source": "seed"}
+{"phrase": "a significant number of", "replacement": "many", "confidence": 0.9, "category": "verbose", "source": "seed"}
+{"phrase": "is able to", "replacement": "can", "confidence": 0.9, "category": "verbose", "source": "seed"}
+{"phrase": "has the ability to", "replacement": "can", "confidence": 0.9, "category": "verbose", "source": "seed"}
+{"phrase": "utilize", "replacement": "use", "confidence": 0.85, "category": "verbose", "source": "humanize-text"}
+{"phrase": "at this point in time", "replacement": "now", "confidence": 0.85, "category": "verbose", "source": "humanize-text"}
+{"phrase": "it is important to note that", "replacement": "note that", "confidence": 0.85, "category": "verbose", "source": "humanize-text"}
+{"phrase": "for the purpose of", "replacement": "to", "confidence": 0.85, "category": "verbose", "source": "humanize-text"}
+{"phrase": "prior to", "replacement": "before", "confidence": 0.85, "category": "verbose", "source": "humanize-text"}
+{"phrase": "subsequent to", "replacement": "after", "confidence": 0.85, "category": "verbose", "source": "humanize-text"}
+{"phrase": "in spite of the fact that", "replacement": "although", "confidence": 0.85, "category": "verbose", "source": "humanize-text"}
+{"phrase": "take into consideration", "replacement": "consider", "confidence": 0.85, "category": "verbose", "source": "humanize-text"}
+{"phrase": "make a decision", "replacement": "decide", "confidence": 0.85, "category": "verbose", "source": "humanize-text"}
+{"phrase": "provide assistance", "replacement": "help", "confidence": 0.85, "category": "verbose", "source": "humanize-text"}
+{"phrase": "at the present time", "replacement": "now", "confidence": 0.85, "category": "verbose", "source": "humanize-text"}
+{"phrase": "in close proximity to", "replacement": "near", "confidence": 0.85, "category": "verbose", "source": "humanize-text"}
+{"phrase": "acede to", "replacement": "grant", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "accompany", "replacement": "go with", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "accomplish", "replacement": "do", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "accordingly", "replacement": "so", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "accumulate", "replacement": "gather", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "additional", "replacement": "more", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "additionally", "replacement": "and", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "adjacent to", "replacement": "close to", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "administer", "replacement": "manage", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "advantageous", "replacement": "useful", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "advise", "replacement": "tell", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "afford", "replacement": "give", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "aggregate", "replacement": "total", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "allocate", "replacement": "give", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "alter", "replacement": "change", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "alteration", "replacement": "change", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "alternative", "replacement": "other", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "anticipate", "replacement": "expect", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "append", "replacement": "attach", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "apprise", "replacement": "tell", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "approximately", "replacement": "about", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "ascertain", "replacement": "find out", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "assist", "replacement": "help", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "assistance", "replacement": "help", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "attain", "replacement": "reach", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "attempt", "replacement": "try", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "biannually", "replacement": "twice a year", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "calculate", "replacement": "work out", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "category", "replacement": "kind", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "cease", "replacement": "end", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "cognizant of", "replacement": "aware of", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "commence", "replacement": "begin", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "commencement", "replacement": "beginning", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "commitment", "replacement": "promise", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "communicate", "replacement": "write", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "compensation", "replacement": "pay", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "complete", "replacement": "finish", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "comply with", "replacement": "follow", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "component", "replacement": "part", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "comprise", "replacement": "consist of", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "conceal", "replacement": "hide", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "concept", "replacement": "idea", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "concerning", "replacement": "about", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "concur", "replacement": "agree", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "consequence", "replacement": "result", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "consequently", "replacement": "so", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "consolidate", "replacement": "combine", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "indicate", "replacement": "say", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "indication", "replacement": "sign", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "individual", "replacement": "person", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "inform", "replacement": "tell", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "initial", "replacement": "first", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "initiate", "replacement": "begin", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "inquire", "replacement": "ask", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "institute", "replacement": "begin", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "interrogate", "replacement": "question", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "locate", "replacement": "find", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "magnitude", "replacement": "size", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "maintain", "replacement": "keep", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "manner", "replacement": "way", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "maximum", "replacement": "most", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "modification", "replacement": "change", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "modify", "replacement": "change", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "necessitate", "replacement": "require", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "necessity", "replacement": "need", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "notification", "replacement": "notice", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "notwithstanding", "replacement": "despite", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "numerous", "replacement": "many", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "objective", "replacement": "goal", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "obligate", "replacement": "bind", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "obligation", "replacement": "debt", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "observe", "replacement": "see", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "obtain", "replacement": "get", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "obviate", "replacement": "avoid", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "occasion", "replacement": "cause", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "occur", "replacement": "happen", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "ongoing", "replacement": "continuing", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "opt for", "replacement": "choose", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "optimum", "replacement": "best", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "option", "replacement": "choice", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "parameter", "replacement": "limit", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "participate", "replacement": "take part", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "per annum", "replacement": "a year", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "personnel", "replacement": "people", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "peruse", "replacement": "read with care", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "per year", "replacement": "a year", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "place", "replacement": "put", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "portion", "replacement": "part", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "constitute", "replacement": "make up", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "construct", "replacement": "build", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "contiguous to", "replacement": "next to", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "currently", "replacement": "now", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "customary", "replacement": "usual", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "decrease", "replacement": "reduce", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "deem", "replacement": "consider", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "defer", "replacement": "delay", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "demise", "replacement": "death", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "demonstrate", "replacement": "show", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "depart", "replacement": "go", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "designate", "replacement": "appoint", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "desire", "replacement": "wish", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "desist", "replacement": "stop", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "detain", "replacement": "hold", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "diminish", "replacement": "lessen", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "discontinue", "replacement": "stop", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "disseminate", "replacement": "send out", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "donate", "replacement": "give", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "duration", "replacement": "time", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "effectuate", "replacement": "carry out", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "elapse", "replacement": "pass", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "elucidate", "replacement": "explain", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "employ", "replacement": "use", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "employment", "replacement": "work", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "encounter", "replacement": "meet", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "endeavor", "replacement": "try", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "ensure", "replacement": "make sure", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "entitled to", "replacement": "has a right to", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "enumerate", "replacement": "list", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "equivalent", "replacement": "equal", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "evince", "replacement": "show", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "exclude", "replacement": "leave out", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "exhibit", "replacement": "have", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "expedite", "replacement": "hasten", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "expend", "replacement": "spend", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "expenditure", "replacement": "payment", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "expiration", "replacement": "end", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "facilitate", "replacement": "make easier", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "following", "replacement": "after", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "formulate", "replacement": "work out", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "forward", "replacement": "send", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "frequently", "replacement": "often", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "furnish", "replacement": "give", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "hence", "replacement": "so", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "however", "replacement": "but", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "identical", "replacement": "same", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "illustrate", "replacement": "show", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "impact", "replacement": "affect", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "implement", "replacement": "carry out", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "inception", "replacement": "start", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "possess", "replacement": "have", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "preclude", "replacement": "prevent", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "preferable", "replacement": "best", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "premises", "replacement": "place", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "prescribed", "replacement": "set", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "present", "replacement": "give", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "previous", "replacement": "earlier", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "previously", "replacement": "before", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "principal", "replacement": "main", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "prior", "replacement": "earlier", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "proceed", "replacement": "go", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "procure", "replacement": "buy", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "promulgate", "replacement": "make", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "provide", "replacement": "give", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "provided that", "replacement": "if", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "purchase", "replacement": "buy", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "pursuant to", "replacement": "under", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "receive", "replacement": "get", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "regarding", "replacement": "about", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "reimburse", "replacement": "repay", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "remainder", "replacement": "rest", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "render", "replacement": "make", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "represents", "replacement": "is", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "request", "replacement": "ask", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "requisite", "replacement": "needed", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "reside", "replacement": "live", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "respond", "replacement": "answer", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "responsible for", "replacement": "causes", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "retain", "replacement": "keep", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "selection", "replacement": "choice", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "semiannually", "replacement": "twice a year", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "similar to", "replacement": "like", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "solely", "replacement": "only", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "specified", "replacement": "named", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "submit", "replacement": "send", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "subsequent", "replacement": "later", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "subsequently", "replacement": "later", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "sufficient", "replacement": "enough", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "summon", "replacement": "send for", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "terminate", "replacement": "end", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "thus", "replacement": "so", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "transmit", "replacement": "send", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "transpire", "replacement": "happen", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "visualize", "replacement": "think of", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "as a means of", "replacement": "to", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "as to", "replacement": "on", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "by means of", "replacement": "by", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "by reason of", "replacement": "because of", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "by virtue of", "replacement": "by", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "during the period from", "replacement": "from", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "for a period of", "replacement": "for", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "from the point of view of", "replacement": "from", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "in addition to", "replacement": "besides", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "in back of", "replacement": "behind", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "in connection with", "replacement": "with", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "in excess of", "replacement": "more than", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "in favor of", "replacement": "for", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "in lieu of", "replacement": "instead of", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "be in receipt of", "replacement": "have", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "in receipt of", "replacement": "have", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "in terms of", "replacement": "in", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "in the absence of", "replacement": "without", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "in the amount of", "replacement": "for", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "in the case of", "replacement": "in", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "in the nature of", "replacement": "like", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "in the neighborhood of", "replacement": "about", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "on behalf of", "replacement": "for", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "on the basis of", "replacement": "by", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "on the occasion of", "replacement": "on", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "on the part of", "replacement": "by", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "under the provisions of", "replacement": "under", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "with the exception of", "replacement": "except for", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "as regards", "replacement": "about", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "in reference to", "replacement": "on", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "in regard to", "replacement": "on", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "in relation to", "replacement": "on", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "with reference to", "replacement": "on", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "with regard to", "replacement": "on", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "with respect to", "replacement": "on", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "concerning the matter of", "replacement": "on", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "in a situation where", "replacement": "if", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "under circumstances in which", "replacement": "if", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "because of the fact that", "replacement": "given that", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "in view of the fact that", "replacement": "given that", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "for the reason that", "replacement": "given that", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "inasmuch as", "replacement": "given that", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "despite the fact that", "replacement": "although", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "notwithstanding the fact that", "replacement": "although", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "as a consequence of", "replacement": "because of", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "as a result of", "replacement": "because of", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "previous to", "replacement": "before", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "antecedent to", "replacement": "before", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "anterior to", "replacement": "before", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "posterior to", "replacement": "after", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "during such time as", "replacement": "while", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "during the time that", "replacement": "while", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "in the course of", "replacement": "during", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "during the course of", "replacement": "during", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "at present", "replacement": "now", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "at an early date", "replacement": "soon", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "in the near future", "replacement": "soon", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "at the time that", "replacement": "when", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "at such time as", "replacement": "when", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "at the place where", "replacement": "where", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "in the place in which", "replacement": "where", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "until such time as", "replacement": "until", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "in proximity to", "replacement": "close to", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "in the vicinity of", "replacement": "close to", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "there is a need for", "replacement": "must", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "it is necessary that", "replacement": "must", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "it is important that", "replacement": "must", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "has discretion to", "replacement": "may", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "is permitted to", "replacement": "may", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "is authorized to", "replacement": "may", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "is in a position to", "replacement": "can", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "with a view to", "replacement": "to", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "with the object of", "replacement": "to", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "there is no doubt but that", "replacement": "doubtless", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "this is a subject that", "replacement": "this topic", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "the question as to whether", "replacement": "whether", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "it would appear that", "replacement": "apparently", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "it is probable that", "replacement": "probably", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "in a negligent manner", "replacement": "negligently", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "in a precise manner", "replacement": "precisely", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "a large percentage of", "replacement": "many", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "a large number of", "replacement": "many", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "the majority of", "replacement": "most", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "sufficient number of", "replacement": "enough", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "adequate number of", "replacement": "enough", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "excessive number of", "replacement": "too many", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "have a negative impact", "replacement": "hurt", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "no later than", "replacement": "before", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "on or before", "replacement": "before", "confidence": 0.85, "category": "wordy", "source": "kimble"}
+{"phrase": "(?", "replacement": "give|gave) rise to: lead to", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "a (?", "replacement": "large)? majority of: most", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "a myriad of", "replacement": "myriad", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "adversely impact", "replacement": "hurt", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "all across", "replacement": "across", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "all of a sudden", "replacement": "suddenly", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "all of these", "replacement": "these", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "all of", "replacement": "all", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "all-time record", "replacement": "record", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "almost all", "replacement": "most", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "almost never", "replacement": "seldom", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "along the lines of", "replacement": "similar to", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "an adequate number of", "replacement": "enough", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "an appreciable number of", "replacement": "many", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "an estimated", "replacement": "about", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "any and all", "replacement": "all", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "are in agreement", "replacement": "agree", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "as a matter of fact", "replacement": "in fact", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "as of yet", "replacement": "yet", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "as per", "replacement": "per", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "at a later date", "replacement": "later", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "at all times", "replacement": "always", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "based in large part on", "replacement": "based on", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "based on the fact that", "replacement": "because", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "basic necessity", "replacement": "necessity", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "came to a realization", "replacement": "realized", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "came to an abrupt end", "replacement": "ended abruptly", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "carry out an evaluation of", "replacement": "evaluate", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "close down", "replacement": "close", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "closed down", "replacement": "closed", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "complete stranger", "replacement": "stranger", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "completely separate", "replacement": "separate", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "conduct a review of", "replacement": "review", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "conduct an investigation", "replacement": "investigate", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "conduct experiments", "replacement": "experiment", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "continue on", "replacement": "continue", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "disappear from sight", "replacement": "disappear", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "doomed to fail", "replacement": "doomed", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "during the period of", "replacement": "during", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "emergency situation", "replacement": "emergency", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "except when", "replacement": "unless", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "excessive number", "replacement": "too many", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "extend an invitation", "replacement": "invite", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "fall down", "replacement": "fall", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "fell down", "replacement": "fell", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "for the duration of", "replacement": "during", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "gather together", "replacement": "gather", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "has the capacity to", "replacement": "can", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "has the opportunity to", "replacement": "could", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "hold a meeting", "replacement": "meet", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "if this is not the case", "replacement": "if not", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "in a careful manner", "replacement": "carefully", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "in a thoughtful manner", "replacement": "thoughtfully", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "in an effort to", "replacement": "to", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "in between", "replacement": "between", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "in many cases", "replacement": "often", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "in most cases", "replacement": "usually", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "in some cases", "replacement": "sometimes", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "in spite of", "replacement": "despite", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "in the (?", "replacement": "very)? near future: soon", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "lift up", "replacement": "lift", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "made reference to", "replacement": "referred to", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "make reference to", "replacement": "refer to", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "mix together", "replacement": "mix", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "none at all", "replacement": "none", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "not in a position to", "replacement": "unable", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "not possible", "replacement": "impossible", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "of major importance", "replacement": "important", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "perform an assessment of", "replacement": "assess", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "pertaining to", "replacement": "about", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "place an order", "replacement": "order", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "plays a key role in", "replacement": "is essential to", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "present time", "replacement": "now", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "readily apparent", "replacement": "apparent", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "some of the", "replacement": "some", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "span across", "replacement": "span", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "successfully complete", "replacement": "complete", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "sufficient number (?", "replacement": "of)?: enough", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "take action", "replacement": "act", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "take into account", "replacement": "consider", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "this day and age", "replacement": "this age", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "time (?", "replacement": "frame|period): time", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "used for fuel purposes", "replacement": "used for fuel", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}
+{"phrase": "whether or not", "replacement": "whether", "confidence": 0.85, "category": "verbose", "source": "ms-wordiness"}

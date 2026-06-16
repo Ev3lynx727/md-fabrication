@@ -38,14 +38,19 @@ def try_hf_dataset() -> int:
         count = 0
         with open(OUT, 'w') as f:
             for row in ds:
-                # row: {id, lemma, synonyms, definition, pos}
-                if len(row.get('synonyms', [])) < 2:
+                members = row.get('@members', '')
+                parts = [m.strip() for m in members.split() if m.strip()]
+                word = parts[0] if parts else ''
+                # Derive synonyms from SynsetRelation list
+                synonyms = [r.get('@target', '') for r in row.get('SynsetRelation', []) if r.get('@target', '')]
+                synonyms = list(dict.fromkeys(synonyms))  # deduplicate, preserve order
+                if len(synonyms) < 2:
                     continue
                 f.write(json.dumps({
                     "id": f"vocab-{count + 1:04d}",
-                    "word": row['lemma'],
-                    "synonyms": row['synonyms'],
-                    "tags": [row.get('pos', 'unknown')],
+                    "word": word,
+                    "synonyms": synonyms[:10],
+                    "tags": [row.get('@partOfSpeech', 'unknown')],
                 }) + '\n')
                 count += 1
         return count

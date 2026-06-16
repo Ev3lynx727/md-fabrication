@@ -1,0 +1,133 @@
+{"id": "con-0001", "full": "am not", "contracted": "ain't", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0002", "full": "are not", "contracted": "aren't", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0003", "full": "can not", "contracted": "can't", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0004", "full": "could have", "contracted": "could've", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0005", "full": "could not", "contracted": "couldn't", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0006", "full": "could not have", "contracted": "couldn't've", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0007", "full": "did not", "contracted": "didn't", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0008", "full": "do not", "contracted": "don't", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0009", "full": "does not", "contracted": "doesn't", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0010", "full": "going to", "contracted": "gonna", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0011", "full": "had not", "contracted": "hadn't", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0012", "full": "had not have", "contracted": "hadn't've", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0013", "full": "has not", "contracted": "hasn't", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0014", "full": "have not", "contracted": "haven't", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0015", "full": "he is", "contracted": "he's", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0016", "full": "he is not", "contracted": "he'sn't", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0017", "full": "he will", "contracted": "he'll", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0018", "full": "he would", "contracted": "he'd", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0019", "full": "he would have", "contracted": "he'd've", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0020", "full": "how did", "contracted": "how'd", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0021", "full": "how is", "contracted": "how's", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0022", "full": "how will", "contracted": "how'll", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0023", "full": "i am", "contracted": "i'm", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0024", "full": "i have", "contracted": "i've", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0025", "full": "i have not", "contracted": "i'ven't", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0026", "full": "i will", "contracted": "i'll", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0027", "full": "i would", "contracted": "i'd", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0028", "full": "i would have", "contracted": "i'd've", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0029", "full": "is not", "contracted": "isn't", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0030", "full": "it is", "contracted": "it's", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0031", "full": "it is not", "contracted": "it'sn't", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0032", "full": "it was", "contracted": "'twas", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0033", "full": "it will", "contracted": "it'll", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0034", "full": "it would", "contracted": "it'd", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0035", "full": "it would have", "contracted": "it'd've", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0036", "full": "let us", "contracted": "let's", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0037", "full": "madam", "contracted": "ma'am", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0038", "full": "might have", "contracted": "might've", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0039", "full": "might not", "contracted": "mightn't", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0040", "full": "might not have", "contracted": "mightn't've", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0041", "full": "must have", "contracted": "must've", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0042", "full": "must not", "contracted": "mustn't", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0043", "full": "need not", "contracted": "needn't", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0044", "full": "not have", "contracted": "not've", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0045", "full": "of the clock", "contracted": "o'clock", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0046", "full": "old", "contracted": "ol'", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0047", "full": "ought not", "contracted": "oughtn't", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0048", "full": "shall not", "contracted": "shan't", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0049", "full": "she is", "contracted": "she's", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0050", "full": "she is not", "contracted": "she'sn't", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0051", "full": "she will", "contracted": "she'll", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0052", "full": "she would", "contracted": "she'd", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0053", "full": "she would have", "contracted": "she'd've", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0054", "full": "should have", "contracted": "should've", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0055", "full": "should not", "contracted": "shouldn't", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0056", "full": "should not have", "contracted": "shouldn't've", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0057", "full": "somebody is", "contracted": "somebody's", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0058", "full": "somebody will", "contracted": "somebody'll", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0059", "full": "somebody would", "contracted": "somebody'd", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0060", "full": "somebody would have", "contracted": "somebody'd've", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0061", "full": "somebody would not have", "contracted": "somebody'dn't've", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0062", "full": "someone is", "contracted": "someone's", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0063", "full": "someone will", "contracted": "someone'll", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0064", "full": "someone would", "contracted": "someone'd", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0065", "full": "someone would have", "contracted": "someone'd've", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0066", "full": "something is", "contracted": "something's", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0067", "full": "something will", "contracted": "something'll", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0068", "full": "something would", "contracted": "something'd", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0069", "full": "something would have", "contracted": "something'd've", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0070", "full": "that is", "contracted": "that's", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0071", "full": "that will", "contracted": "that'll", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0072", "full": "there are", "contracted": "there're", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0073", "full": "there is", "contracted": "there's", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0074", "full": "there would", "contracted": "there'd", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0075", "full": "there would have", "contracted": "there'd've", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0076", "full": "they are", "contracted": "they're", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0077", "full": "they have", "contracted": "they've", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0078", "full": "they have not", "contracted": "they'ven't", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0079", "full": "they will", "contracted": "they'll", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0080", "full": "they will have not", "contracted": "they'll'ven't", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0081", "full": "they will not have", "contracted": "they'lln't've", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0082", "full": "they would", "contracted": "they'd", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0083", "full": "they would have", "contracted": "they'd've", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0084", "full": "they would have not", "contracted": "they'd'ven't", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0085", "full": "they would not", "contracted": "they'dn't", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0086", "full": "they would not have", "contracted": "they'dn't've", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0087", "full": "want to", "contracted": "wanna", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0088", "full": "was not", "contracted": "wasn't", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0089", "full": "we are", "contracted": "we're", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0090", "full": "we have", "contracted": "we've", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0091", "full": "we will", "contracted": "we'll", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0092", "full": "we will not have", "contracted": "we'lln't've", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0093", "full": "we would", "contracted": "we'd", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0094", "full": "we would have", "contracted": "we'd've", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0095", "full": "we would not have", "contracted": "we'dn't've", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0096", "full": "were not", "contracted": "weren't", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0097", "full": "what are", "contracted": "what're", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0098", "full": "what have", "contracted": "what've", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0099", "full": "what is", "contracted": "what's", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0100", "full": "what is up", "contracted": "sup", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0101", "full": "what will", "contracted": "what'll", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0102", "full": "when is", "contracted": "when's", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0103", "full": "where did", "contracted": "where'd", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0104", "full": "where have", "contracted": "where've", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0105", "full": "where is", "contracted": "where's", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0106", "full": "who are", "contracted": "who're", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0107", "full": "who have", "contracted": "who've", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0108", "full": "who is", "contracted": "who's", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0109", "full": "who will", "contracted": "who'll", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0110", "full": "who would", "contracted": "who'd", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0111", "full": "who would have", "contracted": "who'd've", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0112", "full": "why are", "contracted": "why're", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0113", "full": "why is", "contracted": "why's", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0114", "full": "why will", "contracted": "why'll", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0115", "full": "will not", "contracted": "won't", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0116", "full": "will not have", "contracted": "won't've", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0117", "full": "would have", "contracted": "would've", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0118", "full": "would not", "contracted": "wouldn't", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0119", "full": "would not have", "contracted": "wouldn't've", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0120", "full": "you all", "contracted": "y'all", "confidence": 0.9, "tags": ["standard"]}
+{"id": "con-0121", "full": "you all will", "contracted": "y'all'll", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0122", "full": "you all will have", "contracted": "y'all'll've", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0123", "full": "you all will have not", "contracted": "y'all'll'ven't", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0124", "full": "you all will not", "contracted": "y'all'lln't", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0125", "full": "you all would have", "contracted": "y'all'd've", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0126", "full": "you all would not have", "contracted": "y'all'dn't've", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0127", "full": "you are", "contracted": "you're", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0128", "full": "you are not", "contracted": "you'ren't", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0129", "full": "you have", "contracted": "you've", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0130", "full": "you have not", "contracted": "you'ven't", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0131", "full": "you will", "contracted": "you'll", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0132", "full": "you would", "contracted": "you'd", "confidence": 0.9, "tags": ["informal"]}
+{"id": "con-0133", "full": "you would have", "contracted": "you'd've", "confidence": 0.9, "tags": ["informal"]}

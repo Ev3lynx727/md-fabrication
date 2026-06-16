@@ -1,6 +1,64 @@
-{"id": "intro-001", "phrase": "In practice,", "triggers": ["^The ", "^This "], "weight": 0.3}
-{"id": "intro-002", "phrase": "Notably,", "triggers": ["^The ", "^This "], "weight": 0.3}
-{"id": "intro-003", "phrase": "Specifically,", "triggers": ["^The ", "^This "], "weight": 0.3}
-{"id": "intro-004", "phrase": "In many cases,", "triggers": ["^The ", "^This "], "weight": 0.3}
-{"id": "intro-005", "phrase": "Typically,", "triggers": ["^The ", "^This "], "weight": 0.3}
-{"id": "intro-006", "phrase": "Fundamentally,", "triggers": ["^The ", "^This "], "weight": 0.3}
+{"id": "intro-001", "phrase": "Notably,", "triggers": ["^The ", "^This "], "weight": 0.3}
+{"id": "intro-002", "phrase": "Specifically,", "triggers": ["^The ", "^This "], "weight": 0.3}
+{"id": "intro-003", "phrase": "Typically,", "triggers": ["^The ", "^This "], "weight": 0.3}
+{"id": "intro-004", "phrase": "First,", "triggers": ["^The ", "^This "], "weight": 0.3}
+{"id": "intro-005", "phrase": "Initially,", "triggers": ["^The ", "^This "], "weight": 0.3}
+{"id": "intro-006", "phrase": "Importantly,", "triggers": ["^The ", "^This "], "weight": 0.3}
+{"id": "intro-007", "phrase": "Significantly,", "triggers": ["^The ", "^This "], "weight": 0.3}
+{"id": "intro-008", "phrase": "Interestingly,", "triggers": ["^The ", "^This "], "weight": 0.3}
+{"id": "intro-009", "phrase": "Remarkably,", "triggers": ["^The ", "^This "], "weight": 0.3}
+{"id": "intro-010", "phrase": "Surprisingly,", "triggers": ["^The ", "^This "], "weight": 0.3}
+{"id": "intro-011", "phrase": "Ultimately,", "triggers": ["^The ", "^This "], "weight": 0.3}
+{"id": "intro-012", "phrase": "Essentially,", "triggers": ["^The ", "^This "], "weight": 0.3}
+{"id": "intro-013", "phrase": "Historically,", "triggers": ["^The ", "^This "], "weight": 0.3}
+{"id": "intro-014", "phrase": "Traditionally,", "triggers": ["^The ", "^This "], "weight": 0.3}
+{"id": "intro-015", "phrase": "Theoretically,", "triggers": ["^The ", "^This "], "weight": 0.2}
+{"id": "intro-016", "phrase": "Collectively,", "triggers": ["^The ", "^This "], "weight": 0.2}
+{"id": "intro-017", "phrase": "Generally,", "triggers": ["^The ", "^This "], "weight": 0.2}
+{"id": "intro-018", "phrase": "Overall,", "triggers": ["^The ", "^This "], "weight": 0.3}
+{"id": "intro-019", "phrase": "In short,", "triggers": ["^The ", "^This "], "weight": 0.3}
+{"id": "intro-020", "phrase": "In sum,", "triggers": ["^The ", "^This "], "weight": 0.3}
+{"id": "intro-021", "phrase": "In fact,", "triggers": ["^The ", "^This "], "weight": 0.3}
+{"id": "intro-022", "phrase": "In particular,", "triggers": ["^The ", "^This "], "weight": 0.3}
+{"id": "intro-023", "phrase": "Alternatively,", "triggers": ["^The ", "^This "], "weight": 0.2}
+{"id": "intro-024", "phrase": "Conversely,", "triggers": ["^The ", "^This "], "weight": 0.2}
+{"id": "intro-025", "phrase": "Curiously,", "triggers": ["^The ", "^This "], "weight": 0.2}
+{"id": "intro-026", "phrase": "Oddly,", "triggers": ["^The ", "^This "], "weight": 0.2}
+{"id": "intro-027", "phrase": "Strangely,", "triggers": ["^The ", "^This "], "weight": 0.2}
+{"id": "intro-028", "phrase": "Ironically,", "triggers": ["^The ", "^This "], "weight": 0.2}
+{"id": "intro-029", "phrase": "Unfortunately,", "triggers": ["^The ", "^This "], "weight": 0.2}
+{"id": "intro-030", "phrase": "Frankly,", "triggers": ["^The ", "^This "], "weight": 0.2}
+{"id": "intro-031", "phrase": "Honestly,", "triggers": ["^The ", "^This "], "weight": 0.2}
+{"id": "intro-032", "phrase": "Personally,", "triggers": ["^The ", "^This "], "weight": 0.2}
+{"id": "intro-033", "phrase": "Admittedly,", "triggers": ["^The ", "^This "], "weight": 0.2}
+{"id": "intro-034", "phrase": "Arguably,", "triggers": ["^The ", "^This "], "weight": 0.2}
+{"id": "intro-035", "phrase": "Presumably,", "triggers": ["^The ", "^This "], "weight": 0.2}
+{"id": "intro-036", "phrase": "Undoubtedly,", "triggers": ["^The ", "^This "], "weight": 0.2}
+{"id": "intro-037", "phrase": "Surely,", "triggers": ["^The ", "^This "], "weight": 0.2}
+{"id": "intro-038", "phrase": "Clearly,", "triggers": ["^The ", "^This "], "weight": 0.3}
+{"id": "intro-039", "phrase": "Obviously,", "triggers": ["^The ", "^This "], "weight": 0.2}
+{"id": "intro-040", "phrase": "Evidently,", "triggers": ["^The ", "^This "], "weight": 0.2}
+{"id": "intro-041", "phrase": "Indeed,", "triggers": ["^The ", "^This "], "weight": 0.3}
+{"id": "intro-042", "phrase": "Certainly,", "triggers": ["^The ", "^This "], "weight": 0.2}
+{"id": "intro-043", "phrase": "Naturally,", "triggers": ["^The ", "^This "], "weight": 0.2}
+{"id": "intro-044", "phrase": "Inevitably,", "triggers": ["^The ", "^This "], "weight": 0.2}
+{"id": "intro-045", "phrase": "Currently,", "triggers": ["^The ", "^This "], "weight": 0.2}
+{"id": "intro-046", "phrase": "Recently,", "triggers": ["^The ", "^This "], "weight": 0.2}
+{"id": "intro-047", "phrase": "Eventually,", "triggers": ["^The ", "^This "], "weight": 0.2}
+{"id": "intro-048", "phrase": "Meanwhile,", "triggers": ["^The ", "^This "], "weight": 0.2}
+{"id": "intro-049", "phrase": "Simultaneously,", "triggers": ["^The ", "^This "], "weight": 0.15}
+{"id": "intro-050", "phrase": "Subsequently,", "triggers": ["^The ", "^This "], "weight": 0.15}
+{"id": "intro-051", "phrase": "Thereafter,", "triggers": ["^The ", "^This "], "weight": 0.15}
+{"id": "intro-052", "phrase": "Further,", "triggers": ["^The ", "^This "], "weight": 0.2}
+{"id": "intro-053", "phrase": "Moreover,", "triggers": ["^The ", "^This "], "weight": 0.15}
+{"id": "intro-054", "phrase": "Furthermore,", "triggers": ["^The ", "^This "], "weight": 0.15}
+{"id": "intro-055", "phrase": "Likewise,", "triggers": ["^The ", "^This "], "weight": 0.2}
+{"id": "intro-056", "phrase": "Similarly,", "triggers": ["^The ", "^This "], "weight": 0.2}
+{"id": "intro-057", "phrase": "Otherwise,", "triggers": ["^The ", "^This "], "weight": 0.15}
+{"id": "intro-058", "phrase": "Nevertheless,", "triggers": ["^The ", "^This "], "weight": 0.15}
+{"id": "intro-059", "phrase": "Nonetheless,", "triggers": ["^The ", "^This "], "weight": 0.15}
+{"id": "intro-060", "phrase": "Regardless,", "triggers": ["^The ", "^This "], "weight": 0.15}
+{"id": "intro-061", "phrase": "Still,", "triggers": ["^The ", "^This "], "weight": 0.15}
+{"id": "intro-062", "phrase": "Then,", "triggers": ["^The ", "^This "], "weight": 0.15}
+{"id": "intro-063", "phrase": "Next,", "triggers": ["^The ", "^This "], "weight": 0.2}
+{"id": "intro-064", "phrase": "Finally,", "triggers": ["^The ", "^This "], "weight": 0.3}

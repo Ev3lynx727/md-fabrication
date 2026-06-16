@@ -1,0 +1,70 @@
+{"phrase": "delve", "category": "vocabulary", "replacement": "examine, study", "severity": "high", "id": "banned-0001"}
+{"phrase": "tapestry", "category": "metaphor", "replacement": "(describe specifically)", "severity": "high", "id": "banned-0002"}
+{"phrase": "navigate", "category": "vocabulary", "replacement": "handle, work through, deal with", "severity": "high", "id": "banned-0003"}
+{"phrase": "leverage", "category": "vocabulary", "replacement": "use, apply", "severity": "high", "id": "banned-0004"}
+{"phrase": "landscape", "category": "metaphor", "replacement": "field, area", "severity": "high", "id": "banned-0005"}
+{"phrase": "ecosystem", "category": "metaphor", "replacement": "network, world", "severity": "high", "id": "banned-0006"}
+{"phrase": "realm", "category": "metaphor", "replacement": "field, area", "severity": "high", "id": "banned-0007"}
+{"phrase": "multifaceted", "category": "vocabulary", "replacement": "complex", "severity": "medium", "id": "banned-0008"}
+{"phrase": "paramount", "category": "vocabulary", "replacement": "most important", "severity": "medium", "id": "banned-0009"}
+{"phrase": "unprecedented", "category": "vocabulary", "replacement": "new, never seen", "severity": "medium", "id": "banned-0010"}
+{"phrase": "crucial", "category": "vocabulary", "replacement": "important, key", "severity": "medium", "id": "banned-0011"}
+{"phrase": "robust", "category": "vocabulary", "replacement": "strong, reliable", "severity": "medium", "id": "banned-0012"}
+{"phrase": "comprehensive", "category": "vocabulary", "replacement": "full, thorough", "severity": "low", "id": "banned-0013"}
+{"phrase": "nuanced", "category": "vocabulary", "replacement": "(state the nuance)", "severity": "medium", "id": "banned-0014"}
+{"phrase": "intricate", "category": "vocabulary", "replacement": "complex, detailed", "severity": "medium", "id": "banned-0015"}
+{"phrase": "foster", "category": "vocabulary", "replacement": "grow, build, encourage", "severity": "medium", "id": "banned-0016"}
+{"phrase": "underscore", "category": "vocabulary", "replacement": "show, prove", "severity": "medium", "id": "banned-0017"}
+{"phrase": "pivotal", "category": "vocabulary", "replacement": "key, central", "severity": "medium", "id": "banned-0018"}
+{"phrase": "holistic", "category": "vocabulary", "replacement": "whole, full", "severity": "medium", "id": "banned-0019"}
+{"phrase": "facilitate", "category": "vocabulary", "replacement": "help, enable", "severity": "medium", "id": "banned-0020"}
+{"phrase": "utilize", "category": "vocabulary", "replacement": "use", "severity": "medium", "id": "banned-0021"}
+{"phrase": "ameliorate", "category": "vocabulary", "replacement": "improve", "severity": "high", "id": "banned-0022"}
+{"phrase": "expedite", "category": "vocabulary", "replacement": "speed up", "severity": "medium", "id": "banned-0023"}
+{"phrase": "methodology", "category": "vocabulary", "replacement": "method", "severity": "low", "id": "banned-0024"}
+{"phrase": "commence", "category": "vocabulary", "replacement": "start, begin", "severity": "low", "id": "banned-0025"}
+{"phrase": "terminate", "category": "vocabulary", "replacement": "end", "severity": "low", "id": "banned-0026"}
+{"phrase": "endeavour", "category": "vocabulary", "replacement": "try", "severity": "low", "id": "banned-0027"}
+{"phrase": "numerous", "category": "vocabulary", "replacement": "many", "severity": "low", "id": "banned-0028"}
+{"phrase": "approximately", "category": "vocabulary", "replacement": "about", "severity": "low", "id": "banned-0029"}
+{"phrase": "it is important to note that", "category": "filler", "replacement": "", "severity": "high", "id": "banned-0030"}
+{"phrase": "it's worth noting that", "category": "filler", "replacement": "", "severity": "high", "id": "banned-0031"}
+{"phrase": "it should be noted that", "category": "filler", "replacement": "", "severity": "high", "id": "banned-0032"}
+{"phrase": "in the realm of", "category": "verbose", "replacement": "in", "severity": "medium", "id": "banned-0033"}
+{"phrase": "in the landscape of", "category": "verbose", "replacement": "in", "severity": "medium", "id": "banned-0034"}
+{"phrase": "in the world of", "category": "verbose", "replacement": "in", "severity": "medium", "id": "banned-0035"}
+{"phrase": "due to the fact that", "category": "verbose", "replacement": "because", "severity": "medium", "id": "banned-0036"}
+{"phrase": "in the event that", "category": "verbose", "replacement": "if", "severity": "medium", "id": "banned-0037"}
+{"phrase": "with regard to", "category": "verbose", "replacement": "about", "severity": "medium", "id": "banned-0038"}
+{"phrase": "in light of", "category": "verbose", "replacement": "given, because of", "severity": "medium", "id": "banned-0039"}
+{"phrase": "prior to", "category": "verbose", "replacement": "before", "severity": "medium", "id": "banned-0040"}
+{"phrase": "subsequent to", "category": "verbose", "replacement": "after", "severity": "medium", "id": "banned-0041"}
+{"phrase": "in order to", "category": "verbose", "replacement": "to", "severity": "medium", "id": "banned-0042"}
+{"phrase": "a variety of", "category": "verbose", "replacement": "many, several", "severity": "low", "id": "banned-0043"}
+{"phrase": "a number of", "category": "verbose", "replacement": "some", "severity": "low", "id": "banned-0044"}
+{"phrase": "at the end of the day", "category": "cliche", "replacement": "", "severity": "medium", "id": "banned-0045"}
+{"phrase": "when all is said and done", "category": "cliche", "replacement": "", "severity": "medium", "id": "banned-0046"}
+{"phrase": "the fact of the matter is", "category": "filler", "replacement": "", "severity": "medium", "id": "banned-0047"}
+{"phrase": "that's a great question", "category": "sycophancy", "replacement": "", "severity": "high", "id": "banned-0048"}
+{"phrase": "certainly!", "category": "sycophancy", "replacement": "", "severity": "high", "id": "banned-0049"}
+{"phrase": "absolutely!", "category": "sycophancy", "replacement": "", "severity": "high", "id": "banned-0050"}
+{"phrase": "i'd be happy to", "category": "sycophancy", "replacement": "", "severity": "high", "id": "banned-0051"}
+{"phrase": "great point", "category": "sycophancy", "replacement": "", "severity": "high", "id": "banned-0052"}
+{"phrase": "what a thoughtful question", "category": "sycophancy", "replacement": "", "severity": "high", "id": "banned-0053"}
+{"phrase": "i appreciate you asking", "category": "sycophancy", "replacement": "", "severity": "high", "id": "banned-0054"}
+{"phrase": "i hope this helps", "category": "sycophancy", "replacement": "", "severity": "high", "id": "banned-0055"}
+{"phrase": "let me know if you have any questions", "category": "sycophancy", "replacement": "", "severity": "medium", "id": "banned-0056"}
+{"phrase": "feel free to ask", "category": "sycophancy", "replacement": "", "severity": "medium", "id": "banned-0057"}
+{"phrase": "in conclusion", "category": "filler", "replacement": "", "severity": "medium", "id": "banned-0058"}
+{"phrase": "to summarise", "category": "filler", "replacement": "", "severity": "medium", "id": "banned-0059"}
+{"phrase": "all in all", "category": "filler", "replacement": "", "severity": "medium", "id": "banned-0060"}
+{"phrase": "make contact with", "category": "false-limb", "replacement": "call, meet", "severity": "medium", "id": "banned-0061"}
+{"phrase": "give consideration to", "category": "false-limb", "replacement": "consider", "severity": "medium", "id": "banned-0062"}
+{"phrase": "take into consideration", "category": "false-limb", "replacement": "consider", "severity": "medium", "id": "banned-0063"}
+{"phrase": "exhibit a tendency to", "category": "false-limb", "replacement": "tend to", "severity": "medium", "id": "banned-0064"}
+{"phrase": "play a leading role in", "category": "false-limb", "replacement": "lead", "severity": "low", "id": "banned-0065"}
+{"phrase": "serve the purpose of", "category": "false-limb", "replacement": "serve", "severity": "low", "id": "banned-0066"}
+{"phrase": "have the effect of", "category": "false-limb", "replacement": "(do directly)", "severity": "medium", "id": "banned-0067"}
+{"phrase": "militate against", "category": "false-limb", "replacement": "fight", "severity": "low", "id": "banned-0068"}
+{"phrase": "be subjected to", "category": "false-limb", "replacement": "(use active)", "severity": "medium", "id": "banned-0069"}
+{"phrase": "give rise to", "category": "false-limb", "replacement": "cause", "severity": "medium", "id": "banned-0070"}
