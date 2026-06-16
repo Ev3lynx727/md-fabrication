@@ -40,6 +40,7 @@ function renderSummaryTable(summary: FabricationSummary): string {
     .addRow('Hedge Phrases Injected', summary.hedgePhrasesInjected)
     .addRow('Conjunction Starts', summary.conjunctionStartsAdded)
     .addRow('Sentence Openings Varied', summary.sentenceOpeningsVaried)
+    .addRow('Banned Words Removed', summary.bannedWordsRemoved)
     .toString()
 }
 
@@ -568,7 +569,7 @@ Examples:
 
       if (opts.check) {
         console.log('Dry-run: checking upstream sources...')
-        console.log('  [1/9] WordNet    \u2192 vocabulary.jsonl         (check: https://wordnet.princeton.edu)')
+        console.log('  [1/9] TOEFL 1K   \u2192 vocabulary.jsonl         (check: https://huggingface.co/datasets/wordlevel/toefl-essential-vocabulary-1k)')
         console.log('  [2/9] Discovery  \u2192 transitions.jsonl        (check: https://github.com/sileod/Discovery)')
         console.log('  [3/9] Discovery  \u2192 conjunctions.jsonl       (check: curated seed)')
         console.log('  [4/9] Discovery  \u2192 conjunction-starts.jsonl (check: curated seed)')

@@ -785,7 +785,7 @@
 {"id": "toefl-0785", "word": "disrupt", "synonyms": ["interrupt", "disturb"], "tags": ["verb"]}
 {"id": "toefl-0786", "word": "inferior", "synonyms": ["substandard", "subordinate"], "tags": ["adjective"]}
 {"id": "toefl-0787", "word": "severely", "synonyms": ["critically", "harshly"], "tags": ["adverb"]}
-{"id": "toefl-0788", "word": "stereotype", "synonyms": ["preconception", "cliché"], "tags": ["noun"]}
+{"id": "toefl-0788", "word": "stereotype", "synonyms": ["preconception", "clich\u00e9"], "tags": ["noun"]}
 {"id": "toefl-0789", "word": "treaty", "synonyms": ["pact", "accord"], "tags": ["noun"]}
 {"id": "toefl-0790", "word": "impulse", "synonyms": ["urge", "drive"], "tags": ["noun"]}
 {"id": "toefl-0791", "word": "minimal", "synonyms": ["least", "slightest"], "tags": ["adjective"]}
@@ -998,13 +998,13 @@
 {"id": "toefl-0998", "word": "curriculum", "synonyms": ["course of study", "syllabus"], "tags": ["noun"]}
 {"id": "toefl-0999", "word": "circulate", "synonyms": ["flow", "spread"], "tags": ["verb"]}
 {"id": "toefl-1000", "word": "dimension", "synonyms": ["aspect", "facet"], "tags": ["noun"]}
-{"id": "vocab-hc-0001", "word": "important", "synonyms": ["critical", "significant", "key", "essential", "crucial"], "tags": ["adj"]}
-{"id": "vocab-hc-0002", "word": "use", "synonyms": ["leverage", "employ", "utilize"], "tags": ["v"]}
-{"id": "vocab-hc-0003", "word": "very", "synonyms": ["highly", "extremely", "remarkably", "exceptionally"], "tags": ["adv"]}
-{"id": "vocab-hc-0004", "word": "many", "synonyms": ["numerous", "countless", "various", "myriad"], "tags": ["adj"]}
-{"id": "vocab-hc-0005", "word": "thing", "synonyms": ["aspect", "element", "factor", "component"], "tags": ["n"]}
-{"id": "vocab-hc-0006", "word": "good", "synonyms": ["effective", "valuable", "beneficial", "compelling"], "tags": ["adj"]}
-{"id": "vocab-hc-0007", "word": "big", "synonyms": ["substantial", "significant", "considerable", "extensive"], "tags": ["adj"]}
-{"id": "vocab-hc-0008", "word": "really", "synonyms": ["genuinely", "truly", "particularly"], "tags": ["adv"]}
-{"id": "vocab-hc-0009", "word": "show", "synonyms": ["demonstrate", "illustrate", "reveal", "indicate"], "tags": ["v"]}
-{"id": "vocab-hc-0010", "word": "get", "synonyms": ["obtain", "acquire", "attain"], "tags": ["v"]}
+{"id": "vocab-001", "word": "important", "synonyms": ["critical", "significant", "key", "essential", "crucial", "vital", "paramount"], "tags": ["adjective"]}
+{"id": "vocab-002", "word": "use", "synonyms": ["leverage", "employ", "utilize", "deploy", "apply"], "tags": ["verb"]}
+{"id": "vocab-003", "word": "very", "synonyms": ["highly", "extremely", "remarkably", "exceptionally", "profoundly"], "tags": ["adverb"]}
+{"id": "vocab-004", "word": "many", "synonyms": ["numerous", "countless", "various", "myriad", "multiple"], "tags": ["adjective"]}
+{"id": "vocab-005", "word": "thing", "synonyms": ["aspect", "element", "factor", "component", "feature"], "tags": ["noun"]}
+{"id": "vocab-006", "word": "good", "synonyms": ["effective", "valuable", "beneficial", "compelling", "excellent"], "tags": ["adjective"]}
+{"id": "vocab-007", "word": "big", "synonyms": ["substantial", "significant", "considerable", "extensive", "major"], "tags": ["adjective"]}
+{"id": "vocab-008", "word": "really", "synonyms": ["genuinely", "truly", "particularly", "indeed"], "tags": ["adverb"]}
+{"id": "vocab-009", "word": "show", "synonyms": ["demonstrate", "illustrate", "reveal", "indicate", "exhibit"], "tags": ["verb"]}
+{"id": "vocab-010", "word": "get", "synonyms": ["obtain", "acquire", "attain", "secure"], "tags": ["verb"]}
