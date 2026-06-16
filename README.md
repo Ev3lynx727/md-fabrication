@@ -29,14 +29,15 @@ Part of the [micromark](https://github.com/Ev3lynx727/micromark) monorepo alongs
 | **Image map** | Categorize images (local/remote/bucket/broken) |
 | **Wiki assembly** | Compile DAG-ordered `.md` fragments into an article (`--assemble`) |
 | **Fragment lint** | Validate wiki fragments for broken links, cycles, missing frontmatter (`--lint`) |
-| **DAG preview** | Show topological order of wiki fragments (`--gather`) |
+| **DAG preview** | Show topological order of wiki fragments |
+| **Zod validation** | All CLI inputs validated through typed Zod schemas |
 
 ### Why md-fabrication?
 
 - **LLM-aware** — Targets common LLM writing patterns: rigid conjunctions, passive constructions, uniform rhythm
 - **Agent-native** — Every command produces `--json` output with structured data and error codes
 - **Safe** — `--dry-run` before `--apply`, code blocks are always preserved
-- **Follows md-analyzer pattern** — Same TypeScript CLI, `hooks.toml`, session tracking, run logs
+- **Commander + Zod** — All 14 subcommands with typed argument/option parsing, validated at runtime through Zod v3 schemas
 
 ---
 
@@ -60,59 +61,70 @@ npm run build
 ### Quick test
 
 ```bash
-node md-fabrication.js README.md --json
+node dist/cjs/cli/index.js fabricate README.md --json --dry-run
 ```
 
 ---
 
 ## Usage
 
-### Basic CLI
+### Commands
 
-```bash
-# Analyze without applying changes
-md-fabrication article.md --json
+All operations are invoked as subcommands. Every subcommand supports `--json` for structured output and `--help` for usage details.
 
-# Apply humanization in-place
-md-fabrication article.md --apply --voice casual --json
+| Command | Description |
+|---------|-------------|
+| `fabricate` (alias `f`) | Humanize a markdown file with voice + mode transforms |
+| `graph` | Build document relationship graph for a directory |
+| `orphans` | Find orphan documents (no inbound/outbound links) |
+| `image-map` | Categorize all images (local/remote/bucket/broken) |
+| `backlinks <doc> <dir>` | Find documents linking to a specific file |
+| `assemble` | Compile wiki fragments into article (DAG-based) |
+| `lint` | Validate wiki fragments for issues |
+| `edit-docs` | Infer and prepend frontmatter for fragments missing it |
+| `update-index` | Regenerate index.md page catalog |
+| `update-log` | Append timestamped entry to log.md |
+| `link-up` | Rewire wikilinks and deduplicate headings |
+| `gather` | Preview DAG order of fragments |
+| `ingest` | Ingest a raw article into the wiki |
+| `session` | Show token budget report |
 
-# Preview changes (colorized diff in terminal)
-md-fabrication article.md --dry-run --voice professional
-
-# Check session token budget
-md-fabrication README.md --session --budget 50000 --json
-
-# Document graph analysis
-md-fabrication ./docs --graph --json
-md-fabrication ./docs --orphans
-md-fabrication ./docs --image-map
-md-fabrication ./docs --backlinks README
-```
-
-### Options
+### `fabricate` Options
 
 | Flag | Description | Example |
 |------|-------------|---------|
-| `--json` | Output as JSON | `--json` |
-| `--apply` | Write changes in-place | `--apply` |
-| `--dry-run` | Show diff without writing (colorized) | `--dry-run` |
-| `--voice <voice>` | Target voice: casual, professional, technical, personal-branding | `--voice personal-branding` |
-| `--session` | Token budget report | `--session` |
-| `--budget <n>` | Set token budget limit | `--budget 50000` |
-| `--graph` | Build document relationship graph for a directory | `md-fabrication ./docs --graph` |
-| `--orphans` | Find orphan documents (no inbound/outbound links) | `md-fabrication ./docs --orphans` |
-| `--image-map` | Categorize all images (local/remote/bucket/broken) | `md-fabrication ./docs --image-map` |
-| `--backlinks <target>` | Find documents linking to a specific file | `md-fabrication ./docs --backlinks README` |
-| `--assemble <dir>` | Compile wiki fragments into article (DAG-based) | `md-fabrication --assemble sources/ --dry-run --json` |
-| `--trilogy` | Split assembled article into 3 parts by DAG depth (requires `--dry-run` or `--apply`) | `md-fabrication --assemble sources/ --trilogy --dry-run --json` |
-| `--enhance` | Add series navigation, combined TOC, part metadata (with `--trilogy`) | `md-fabrication --assemble sources/ --trilogy --enhance --dry-run` |
-| `--lint <dir>` | Validate wiki fragments for issues (broken links, missing frontmatter, cycles) | `md-fabrication --lint sources/ --json` |
-| `--gather <dir>` | Preview DAG order of fragments | `md-fabrication --gather sources/ --json` |
-| `--edit-docs <dir>` | Infer and prepend frontmatter for fragments missing it | `md-fabrication --edit-docs sources/` |
-| `--update-index <dir>` | Regenerate index.md page catalog | `md-fabrication --update-index sources/` |
-| `--update-log <dir> <action> <desc>` | Append timestamped entry to log.md | `md-fabrication --update-log sources/ ingest "New Article"` |
-| `--link-up <dir>` | Rewire wikilinks and deduplicate headings | `md-fabrication --link-up sources/` |
-| `--ingest <file> --target <dir>` | Ingest a raw article into the wiki | `md-fabrication --ingest raw/article.md --target sources/` |
+| `-v, --voice <voice>` | Target voice: casual, professional, technical, personal-branding | `--voice personal-branding` |
+| `-m, --mode <mode>` | Mode transform: default, readme, blog, changelog, newsletter, tutorial, landing | `--mode blog` |
+| `-d, --dry-run` | Show diff without writing (colorized) | `--dry-run` |
+| `-a, --apply` | Write changes in-place | `--apply` |
+| `-j, --json` | Output as JSON | `--json` |
+| `-b, --budget <n>` | Set token budget limit | `--budget 50000` |
+| `-s, --session` | Token budget report | `--session` |
+
+### `assemble` Options
+
+| Flag | Description |
+|------|-------------|
+| `-v, --voice <voice>` | Post-assembly humanization voice |
+| `-d, --dry-run` | Preview assembled content |
+| `-a, --apply` | Write output file to `../output/assembled.md` |
+| `-t, --trilogy` | Split into 3 parts by DAG depth (requires `--dry-run` or `--apply`) |
+| `-e, --enhance` | Add series nav, combined TOC, part metadata (with `--trilogy`) |
+| `-j, --json` | Output as JSON |
+
+### `ingest` Options
+
+| Flag | Description |
+|------|-------------|
+| `-t, --target <dir>` | Target fragments directory (default: `../sources` relative to file) |
+| `-j, --json` | Output as JSON |
+
+### `session` Options
+
+| Flag | Description |
+|------|-------------|
+| `-b, --budget <n>` | Token budget limit |
+| `-j, --json` | Output as JSON |
 
 ### Voices
 
@@ -174,63 +186,63 @@ All transformations active except contractions: short punchy sentences, active v
 
 ```bash
 # Polish an article for personal brand / thought leadership
-md-fabrication article.md --apply --voice personal-branding --json
+md-fabrication fabricate article.md --apply --voice personal-branding --json
 
 # Preview changes first
-md-fabrication article.md --dry-run --voice personal-branding
+md-fabrication fabricate article.md --dry-run --voice personal-branding
 ```
 
 ### Examples
 
 ```bash
-# Analyze an article for fabricate suggestions
-md-fabrication article.md --json
+# Analyze an article for humanization suggestions
+md-fabrication fabricate article.md --json
 
 # Casual humanize
-md-fabrication article.md --apply --voice casual --json
+md-fabrication fabricate article.md --apply --voice casual --json
 
 # Professional polish
-md-fabrication article.md --apply --voice professional --json
+md-fabrication fabricate article.md --apply --voice professional --json
 
 # Preview changes first
-md-fabrication article.md --dry-run --voice casual --json
+md-fabrication fabricate article.md --dry-run --voice casual --json
 
 # Personal-branding polish
-md-fabrication article.md --apply --voice personal-branding --json
+md-fabrication fabricate article.md --apply --voice personal-branding --json
 
 # Track token usage
-md-fabrication article.md --session --budget 50000 --json
+md-fabrication session --budget 50000 --json
 
 # Document graph (JSON)
-md-fabrication ./docs --graph --json
+md-fabrication graph ./docs --json
 
 # Find orphan documents
-md-fabrication ./docs --orphans
+md-fabrication orphans ./docs
 
 # Categorize images
-md-fabrication ./docs --image-map --json
+md-fabrication image-map ./docs --json
 
 # Find backlinks to a specific file
-md-fabrication ./docs --backlinks README
+md-fabrication backlinks README ./docs
 
 # Wiki assembly (DAG-based fragment compilation)
-md-fabrication --assemble sources/ --dry-run --json
-md-fabrication --assemble sources/ --voice casual --apply
-md-fabrication --assemble sources/ --trilogy --dry-run --json
-md-fabrication --assemble sources/ --trilogy --enhance --dry-run --json
+md-fabrication assemble sources/ --dry-run --json
+md-fabrication assemble sources/ --voice casual --apply
+md-fabrication assemble sources/ --trilogy --dry-run --json
+md-fabrication assemble sources/ --trilogy --enhance --dry-run --json
 
 # Lint wiki fragments
-md-fabrication --lint sources/ --json
+md-fabrication lint sources/ --json
 
 # Preview DAG order
-md-fabrication --gather sources/
+md-fabrication gather sources/
 
 # Wiki management
-md-fabrication --edit-docs sources/
-md-fabrication --update-index sources/
-md-fabrication --link-up sources/
-md-fabrication --update-log sources/ ingest "New Article"
-md-fabrication --ingest raw/article.md --target sources/
+md-fabrication edit-docs sources/
+md-fabrication update-index sources/
+md-fabrication link-up sources/
+md-fabrication update-log sources/ ingest "New Article"
+md-fabrication ingest raw/article.md --target sources/
 ```
 
 ---
@@ -250,7 +262,7 @@ md-fabrication --ingest raw/article.md --target sources/
 | **Conjunction starts** | _new paragraph_ → "And ..." | Casual only |
 | **Sentence variety** | "The ..." → "Notably, ..." | Casual, Professional |
 
-### Fabrication Output (--json)
+### Fabrication Output (`fabricate --json`)
 
 ```json
 {
@@ -275,7 +287,7 @@ md-fabrication --ingest raw/article.md --target sources/
 }
 ```
 
-### Graph Output (--json --graph)
+### Graph Output (`graph --json`)
 
 ```json
 {
@@ -299,21 +311,54 @@ md-fabrication --ingest raw/article.md --target sources/
 ```text
 md-fabrication/
 ├── src/
-│   └── md-fabrication.ts      # Main source (TypeScript)
-├── md-fabrication.js          # Compiled output
-├── md-fabrication.d.ts        # Type declarations
-├── hooks.toml                 # Configuration
-├── config.yaml                # Standalone YAML config (voice profiles)
+│   ├── cli/
+│   │   └── index.ts           # Commander v13 CLI (14 subcommands)
+│   ├── core/
+│   │   └── schema.ts          # Zod v3 runtime validation
+│   ├── transforms/            # Text transformation modules
+│   │   ├── conjunctions.ts
+│   │   ├── passive-to-active.ts
+│   │   ├── contractions.ts
+│   │   ├── transitions.ts
+│   │   ├── pacing.ts
+│   │   ├── repetitive-phrases.ts
+│   │   ├── vocabulary.ts
+│   │   ├── hedging.ts
+│   │   ├── sentence-variety.ts
+│   │   └── index.ts           # fabricateText() orchestration
+│   ├── graph/                 # Document graph analysis
+│   │   ├── scanner.ts
+│   │   ├── analyzer.ts
+│   │   ├── builder.ts
+│   │   ├── orphans.ts
+│   │   ├── backlinks.ts
+│   │   └── image-map.ts
+│   ├── wiki/                  # Wiki assembly pipeline
+│   │   ├── gather.ts
+│   │   ├── dep-graph.ts
+│   │   ├── assembly.ts
+│   │   ├── trilogy.ts
+│   │   ├── lint.ts
+│   │   ├── edit-docs.ts
+│   │   ├── index.ts
+│   │   ├── log.ts
+│   │   ├── link-up.ts
+│   │   └── ingest.ts
+│   ├── session.ts             # Token budget tracking
+│   └── helpers.ts             # Common validation utilities
+├── config.yaml                # Voice profiles (YAML)
 ├── eslint.config.mjs          # ESLint config
 ├── CHANGELOG.md               # Version history
-├── FEATURE-ASSEMBLE.md        # Wiki assembly spec
 └── log/                       # Run logs
 ```
 
 ### Dependencies
 
+- `commander` ^13 — Subcommand-based CLI with typed argument/option parsing
+- `zod` ^3 — Runtime schema validation for all CLI inputs
 - `js-tiktoken` — GPT-4 token counting
 - `ascii-table3` — Summary rendered as ASCII tables in terminal output
+- `yaml` — Frontmatter parsing in graph analysis
 
 ### Key Functions
 
@@ -331,6 +376,8 @@ md-fabrication/
 | `varySentenceOpenings()` | Randomize sentence opening patterns |
 | `fabricateText()` | Orchestrate all transformations in sequence |
 | `loadSession()` / `saveSession()` | Token budget tracking |
+| `requireDir()` / `requireFile()` | Commander post-parse validation helpers |
+| `recordRun()` | Log run to session file |
 | `extractLinks()` | Extract markdown links from body text |
 | `extractImages()` | Extract image references from body text |
 | `scanMarkdownFiles()` | Recursive `.md` file scanner with skip-dir support |
@@ -366,7 +413,7 @@ When `pub fabricate` is called, it delegates to `md-fabrication`:
 
 ```bash
 # Internal invocation
-md-fabrication article.md --apply --voice casual --json
+md-fabrication fabricate article.md --apply --voice casual --json
 ```
 
 ---
@@ -429,7 +476,7 @@ max_tokens = 100000
 
 | Variable | Description | Default |
 |----------|-------------|---------|
-| `MD_FABRICATION_PATH` | Path to md-fabrication.js | `md-fabrication.js` |
+| `MD_FABRICATION_PATH` | Path to CLI entry point | `dist/cjs/cli/index.js` |
 | `MD_FABRICATION_DEFAULT_VOICE` | Default voice | `professional` |
 | `MD_FABRICATION_MAX_TOKENS` | Max token limit | `100000` |
 | `MD_FABRICATION_DEFAULT_BUDGET` | Default budget | `50000` |
@@ -478,14 +525,14 @@ Location: `{project}/log/{sessionId}.json`
 
 Analyze relationships between markdown files in a directory — track link topology, find orphans, detect broken images.
 
-### Flags
+### Subcommands
 
-| Flag | Description |
-|------|-------------|
-| `--graph` | Full document relationship graph with nodes and edges |
-| `--orphans` | List files with no inbound or outbound links |
-| `--image-map` | Categorize images as local/remote/bucket/broken |
-| `--backlinks <target>` | Find all files that link to a specific document |
+| Command | Description |
+|---------|-------------|
+| `graph <dir>` | Full document relationship graph with nodes and edges |
+| `orphans <dir>` | List files with no inbound or outbound links |
+| `image-map <dir>` | Categorize images as local/remote/bucket/broken |
+| `backlinks <doc> <dir>` | Find all files that link to a specific document |
 
 ### Use Cases
 
@@ -494,20 +541,20 @@ Analyze relationships between markdown files in a directory — track link topol
 - **Broken image detection** — Find `![alt](local.png)` references where the file doesn't exist
 - **Cross-reference analysis** — Discover which articles reference a specific topic file
 
-### Example
+### Examples
 
 ```bash
 # Full graph of a docs directory
-md-fabrication ./docs --graph --json
+md-fabrication graph ./docs --json
 
 # Find orphans (unlinked documents)
-md-fabrication ./docs --orphans
+md-fabrication orphans ./docs
 
 # Check all images
-md-fabrication ./docs --image-map
+md-fabrication image-map ./docs
 
 # Find what links to a specific article
-md-fabrication ./docs --backlinks getting-started
+md-fabrication backlinks getting-started ./docs
 ```
 
 ---
@@ -551,6 +598,9 @@ The `--dry-run` output shows removed lines in **red** and added lines in **green
 | `scan_error` | Error reading a file during directory scan (non-fatal) |
 | `cycle_detected` | Dependency cycle found in `depends_on` graph (assemble/lint) |
 | `no_fragments` | No `.md` files found in assemble/gather/lint target directory |
+| `unknown_command` | Unknown subcommand entered at CLI |
+| `validation_error` | Zod schema validation failure — typed error with field paths |
+| `missing_required_arg` | Commander caught missing positional argument |
 
 ---
 

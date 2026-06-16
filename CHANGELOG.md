@@ -8,14 +8,19 @@
 - Real mode transforms for blog (blank-line collapse + H1), newsletter (TL;DR auto-extract + blank collapse), tutorial (Prerequisites section + H1), landing (single blank-line collapse + H1)
 - Input validation for `--voice` flag — warns on unknown voice names
 - Voice profile type safety — `profile: VoiceProfile` instead of `profile: any` in assembly pipeline
+- Commander v13 CLI layer — all subcommands defined with `.command()`, `.argument()`, `.option()`
+- Zod v3 runtime validation layer via `src/core/schema.ts` — typed schemas with sensible defaults
 
 ### Changed
 
 - Monolithic `src/md-fabrication.ts` completely removed — CLI now exclusively uses modular `src/cli/index.ts`
+- CLI migrated from manual `process.argv` to Commander v13 subcommands (14 commands: fabricate, graph, orphans, image-map, backlinks, assemble, lint, edit-docs, update-index, update-log, link-up, gather, ingest, session)
 - Hardcoded config fallback synced with `config.yaml` — 8 field-level discrepancies fixed across casual, professional, technical, personal-branding profiles
 - Frontmatter parsing switched from naive `line.indexOf(':')` to `yaml.load()`
 - `sentencesRestructured` counter now tracks `conjStart + sentStart` (was double-counting `conjunctionSoftened`)
 - 17 `any` types replaced with proper interfaces across config, assembly, CLI, wiki, hedging
+- Common validation helpers extracted: `requireDir()`, `requireFile()`, `recordRun()`
+- Test script updated to use `fabricate` subcommand
 
 ### Fixed
 
@@ -27,6 +32,8 @@
 
 - Duplicate `countTokens` in `src/core/token-budget.ts` — canonical version in `helpers.ts`
 - 4 unused `MD_FABRICATION_*` environment variables from `.env.example`
+- `getPositionalArg()`, `getPositionalArgs()`, `getFlagArg()` from `helpers.ts` — replaced by Commander's argument/option parsing
+- Manual `showHelp()` function — replaced by Commander's auto-generated `--help`
 
 ## [0.5.0] - 2026-06-13
 
