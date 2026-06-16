@@ -16,7 +16,7 @@ export interface LintResult {
 
 const LINT_CONFIG = {
   default: true,
-  MD013: false,
+  MD013: { line_length: 200 },
   MD033: false,
   MD041: false,
   MD024: false,
