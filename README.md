@@ -312,44 +312,47 @@ md-fabrication ingest raw/article.md --target sources/
 md-fabrication/
 ├── src/
 │   ├── cli/
-│   │   └── index.ts           # Commander v13 CLI (14 subcommands)
+│   │   └── index.ts              # Commander v13 CLI (14 subcommands)
 │   ├── core/
-│   │   └── schema.ts          # Zod v3 runtime validation
-│   ├── transforms/            # Text transformation modules
-│   │   ├── conjunctions.ts
-│   │   ├── passive-to-active.ts
-│   │   ├── contractions.ts
-│   │   ├── transitions.ts
-│   │   ├── pacing.ts
-│   │   ├── repetitive-phrases.ts
-│   │   ├── vocabulary.ts
-│   │   ├── hedging.ts
-│   │   ├── sentence-variety.ts
-│   │   └── index.ts           # fabricateText() orchestration
-│   ├── graph/                 # Document graph analysis
-│   │   ├── scanner.ts
-│   │   ├── analyzer.ts
-│   │   ├── builder.ts
-│   │   ├── orphans.ts
-│   │   ├── backlinks.ts
-│   │   └── image-map.ts
-│   ├── wiki/                  # Wiki assembly pipeline
-│   │   ├── gather.ts
-│   │   ├── dep-graph.ts
-│   │   ├── assembly.ts
-│   │   ├── trilogy.ts
-│   │   ├── lint.ts
-│   │   ├── edit-docs.ts
+│   │   ├── assembly.ts           # Wiki fragment assembly pipeline
+│   │   ├── config.ts             # Config loading (YAML + defaults)
+│   │   ├── frontmatter.ts        # Frontmatter parse/infer
+│   │   ├── graph.ts              # Document graph analysis
+│   │   ├── helpers.ts            # Common validation utilities
+│   │   ├── index.ts              # Core barrel exports
+│   │   ├── lint.ts               # Fragment linting
+│   │   ├── resolve-root.ts       # Project root resolution
+│   │   ├── schema.ts             # Zod v3 runtime validation
+│   │   ├── session.ts            # Token budget tracking
+│   │   ├── types.ts              # Shared type definitions
+│   │   └── wiki.ts               # Wiki management (ingest, index, log, link-up, edit-docs)
+│   ├── modes/                    # Mode transforms (blog, newsletter, etc.)
+│   │   ├── blog.ts
+│   │   ├── changelog.ts
+│   │   ├── default.ts
 │   │   ├── index.ts
-│   │   ├── log.ts
-│   │   ├── link-up.ts
-│   │   └── ingest.ts
-│   ├── session.ts             # Token budget tracking
-│   └── helpers.ts             # Common validation utilities
-├── config.yaml                # Voice profiles (YAML)
-├── eslint.config.mjs          # ESLint config
-├── CHANGELOG.md               # Version history
-└── log/                       # Run logs
+│   │   ├── landing.ts
+│   │   ├── newsletter.ts
+│   │   ├── readme.ts
+│   │   └── tutorial.ts
+│   ├── transforms/               # Text transformation modules
+│   │   ├── conjunction-starts.ts
+│   │   ├── conjunctions.ts
+│   │   ├── contractions.ts
+│   │   ├── fabricate.ts          # fabricateText() orchestration
+│   │   ├── hedging.ts
+│   │   ├── index.ts
+│   │   ├── pacing.ts
+│   │   ├── passive.ts
+│   │   ├── repetitive.ts
+│   │   ├── sentence-variety.ts
+│   │   ├── transitions.ts
+│   │   └── vocabulary.ts
+│   └── index.ts                  # Entry point
+├── config.yaml                   # Voice profiles (YAML)
+├── eslint.config.mjs             # ESLint config
+├── CHANGELOG.md                  # Version history
+└── log/                          # Run logs
 ```
 
 ### Dependencies
@@ -358,7 +361,7 @@ md-fabrication/
 - `zod` ^3 — Runtime schema validation for all CLI inputs
 - `js-tiktoken` — GPT-4 token counting
 - `ascii-table3` — Summary rendered as ASCII tables in terminal output
-- `yaml` — Frontmatter parsing in graph analysis
+- `yaml` — Frontmatter parsing
 
 ### Key Functions
 
