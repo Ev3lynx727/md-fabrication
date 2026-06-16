@@ -47,7 +47,7 @@ Part of the [micromark](https://github.com/Ev3lynx727/micromark) monorepo alongs
 
 ```bash
 npm install -g @ev3lynx/md-fabrication
-md-fabrication --help
+  mdfab --help
 ```
 
 ### From source
@@ -64,7 +64,7 @@ npm run build
 node dist/cjs/cli/index.js fabricate README.md --json --dry-run
 
 # Or if installed globally:
-mdfab fabricate README.md --dry-run
+mdfab fabricate README.md --dry-run --json
 ```
 
 ---
@@ -73,7 +73,7 @@ mdfab fabricate README.md --dry-run
 
 ### Commands
 
-All operations are invoked as subcommands. Every subcommand supports `--json` for structured output and `--help` for usage details. Use `mdfab` as a shorthand alias for `md-fabrication`.
+All operations are invoked as subcommands. Every subcommand supports `--json` for structured output and `--help` for usage details. Use `mdfab` as shorthand.
 
 | Command | Description |
 |---------|-------------|
@@ -189,66 +189,63 @@ All transformations active except contractions: short punchy sentences, active v
 
 ```bash
 # Polish an article for personal brand / thought leadership
-md-fabrication fabricate article.md --apply --voice personal-branding --json
+mdfab fabricate article.md --apply --voice personal-branding --json
 
 # Preview changes first
-md-fabrication fabricate article.md --dry-run --voice personal-branding
+mdfab fabricate article.md --dry-run --voice personal-branding
 ```
 
 ### Examples
 
 ```bash
-# Shorthand alias (mdfab == md-fabrication)
+# Analyze an article for humanization suggestions
 mdfab fabricate article.md --json
 
-# Analyze an article for humanization suggestions
-md-fabrication fabricate article.md --json
-
 # Casual humanize
-md-fabrication fabricate article.md --apply --voice casual --json
+mdfab fabricate article.md --apply --voice casual --json
 
 # Professional polish
-md-fabrication fabricate article.md --apply --voice professional --json
+mdfab fabricate article.md --apply --voice professional --json
 
 # Preview changes first
-md-fabrication fabricate article.md --dry-run --voice casual --json
+mdfab fabricate article.md --dry-run --voice casual --json
 
 # Personal-branding polish
-md-fabrication fabricate article.md --apply --voice personal-branding --json
+mdfab fabricate article.md --apply --voice personal-branding --json
 
 # Track token usage
-md-fabrication session --budget 50000 --json
+mdfab session --budget 50000 --json
 
 # Document graph (JSON)
-md-fabrication graph ./docs --json
+mdfab graph ./docs --json
 
 # Find orphan documents
-md-fabrication orphans ./docs
+mdfab orphans ./docs
 
 # Categorize images
-md-fabrication image-map ./docs --json
+mdfab image-map ./docs --json
 
 # Find backlinks to a specific file
-md-fabrication backlinks README ./docs
+mdfab backlinks README ./docs
 
 # Wiki assembly (DAG-based fragment compilation)
-md-fabrication assemble sources/ --dry-run --json
-md-fabrication assemble sources/ --voice casual --apply
-md-fabrication assemble sources/ --trilogy --dry-run --json
-md-fabrication assemble sources/ --trilogy --enhance --dry-run --json
+mdfab assemble sources/ --dry-run --json
+mdfab assemble sources/ --voice casual --apply
+mdfab assemble sources/ --trilogy --dry-run --json
+mdfab assemble sources/ --trilogy --enhance --dry-run --json
 
 # Lint wiki fragments
-md-fabrication lint sources/ --json
+mdfab lint sources/ --json
 
 # Preview DAG order
-md-fabrication gather sources/
+mdfab gather sources/
 
 # Wiki management
-md-fabrication edit-docs sources/
-md-fabrication update-index sources/
-md-fabrication link-up sources/
-md-fabrication update-log sources/ ingest "New Article"
-md-fabrication ingest raw/article.md --target sources/
+mdfab edit-docs sources/
+mdfab update-index sources/
+mdfab link-up sources/
+mdfab update-log sources/ ingest "New Article"
+mdfab ingest raw/article.md --target sources/
 ```
 
 ---
@@ -422,7 +419,7 @@ When `pub fabricate` is called, it delegates to `md-fabrication`:
 
 ```bash
 # Internal invocation
-md-fabrication fabricate article.md --apply --voice casual --json
+mdfab fabricate article.md --apply --voice casual --json
 ```
 
 ---
@@ -554,16 +551,16 @@ Analyze relationships between markdown files in a directory — track link topol
 
 ```bash
 # Full graph of a docs directory
-md-fabrication graph ./docs --json
+mdfab graph ./docs --json
 
 # Find orphans (unlinked documents)
-md-fabrication orphans ./docs
+mdfab orphans ./docs
 
 # Check all images
-md-fabrication image-map ./docs
+mdfab image-map ./docs
 
 # Find what links to a specific article
-md-fabrication backlinks getting-started ./docs
+mdfab backlinks getting-started ./docs
 ```
 
 ---
