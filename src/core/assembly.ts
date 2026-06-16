@@ -32,18 +32,18 @@ function parseNaturalDate(value: string, timeZone?: string | null): string | nul
       const d = new Date(result.start)
       if (!isNaN(d.getTime())) return toLocalDateString(d, timeZone)
     }
-  } catch {}
+  } catch { /* compromise NLP date parsing failed — try native Date */ }
   try {
     const d = new Date(value)
     if (!isNaN(d.getTime())) return toLocalDateString(d, timeZone)
-  } catch {}
+  } catch { /* native Date parsing failed — return null */ }
   return null
 }
 
 export function parseFragment(content: string): { metadata: FragmentMetadata | null; content: string; raw: string } {
   const fm = extractFrontmatter(content)
   if (!fm.metadata) return { metadata: null, content: fm.content, raw: '' }
-  const parsed = yaml.load(fm.raw.replace(/^---\s*\n/, '').replace(/\n---\s*$/, '')) as Record<string, any>
+  const parsed = yaml.load(fm.raw.replace(/^---\s*\n/, '').replace(/\n---\s*$/, '')) as Record<string, unknown>
   if (!parsed || typeof parsed !== 'object') return { metadata: null, content: fm.content, raw: '' }
   const dependsRaw = parsed.depends_on
   const depends: string[] = Array.isArray(dependsRaw) ? dependsRaw.map(String) : (typeof dependsRaw === 'string' ? [dependsRaw] : [])
@@ -175,7 +175,7 @@ export function extractTags(body: string, existingTags: string[]): string[] {
       for (const w of cleaned) { if (w.length > 3) tagSet.add(w) }
       if (cleaned.length > 0) tagSet.add(cleaned.join('-'))
     }
-  } catch {}
+  } catch { /* NLP tag extraction failed — skip */ }
   return [...tagSet].slice(0, 8)
 }
 
@@ -196,7 +196,7 @@ export function generateAssembledFrontmatter(fragments: Fragment[], assembledBod
     if (f.metadata.author && !author) author = f.metadata.author
     if (f.metadata.source) origins.add(f.metadata.source)
   }
-  const fm: Record<string, any> = { title: titles[0] || 'Assembled Article', tags: [...allTags], fragments: fragments.length }
+  const fm: Record<string, unknown> = { title: titles[0] || 'Assembled Article', tags: [...allTags], fragments: fragments.length }
   if (earliestDate) fm.published = earliestDate
   if (author) fm.author = author
   if (origins.size > 0) fm.origin = [...origins]
@@ -285,7 +285,7 @@ export function enhanceTrilogy(parts: Fragment[][], labels: string[], filenames:
   return enhanced
 }
 
-export function assembleTrilogy(fragments: Fragment[], order: string[], graph: DepGraph<Fragment>, targetDir: string, hasExplicitVoice: boolean, profile: any, jsonOnly: boolean, dryRun: boolean, enhanceMode: boolean): boolean {
+export function assembleTrilogy(fragments: Fragment[], order: string[], graph: DepGraph<Fragment>, targetDir: string, hasExplicitVoice: boolean, profile: VoiceProfile, jsonOnly: boolean, dryRun: boolean, enhanceMode: boolean): boolean {
   const parts = splitTrilogy(fragments, order, graph)
   const labels = ['Introduction', 'Body', 'Conclusion']
   const filenames = ['part-1-intro.md', 'part-2-body.md', 'part-3-conclusion.md']
@@ -324,7 +324,7 @@ export function assembleTrilogy(fragments: Fragment[], order: string[], graph: D
     }
   }
   if (!dryRun) {
-    const manifest: any = { parts: [], fragments: fragments.length, voice: hasExplicitVoice ? { enabled: true, changes: changes.reduce((a: number, b: number) => a + b, 0), profile } : { enabled: false } }
+    const manifest: { parts: { part: number; label: string; output: string; fragments: number; order: string[]; voiceChanges: number }[]; fragments: number; voice: { enabled: boolean; changes?: number; profile?: VoiceProfile } } = { parts: [], fragments: fragments.length, voice: hasExplicitVoice ? { enabled: true, changes: changes.reduce((a: number, b: number) => a + b, 0), profile } : { enabled: false } }
     for (let i = 0; i < 3; i++) {
       manifest.parts.push({ part: i + 1, label: labels[i], output: filenames[i], fragments: parts[i].length, order: parts[i].map((f: Fragment) => f.fileName), voiceChanges: changes[i] })
     }

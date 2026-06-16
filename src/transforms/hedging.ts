@@ -1,5 +1,5 @@
 export function hedgeAbsoluteStatements(text: string): { result: string; changes: number } {
-  const hedgeMap: [RegExp, (match: string) => string][] = [
+  const hedgeMap: [RegExp, (...args: string[]) => string][] = [
     [/\b(s)always\b/gi, m => { const up = m[0] === m[0].toUpperCase(); return m.length > 1 && m[0] === 's' ? (up ? 'S' : 's') + 'often' : up ? 'Often' : 'often' }],
     [/\bnever\b/gi, m => m[0] === m[0].toUpperCase() ? 'Rarely' : 'rarely'],
     [/\beveryone\b/gi, m => m[0] === m[0].toUpperCase() ? 'Many' : 'many'],
@@ -11,7 +11,7 @@ export function hedgeAbsoluteStatements(text: string): { result: string; changes
   let changes = 0
   for (const [pattern, replacer] of hedgeMap) {
     const before = result
-    result = result.replace(pattern, replacer as any)
+    result = result.replace(pattern, replacer)
     if (result !== before) changes++
   }
   return { result, changes }

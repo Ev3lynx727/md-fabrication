@@ -29,5 +29,5 @@ export function writeRunLog(log: RunLog): void {
     const existing: RunLog[] = fs.existsSync(logFile) ? JSON.parse(fs.readFileSync(logFile, 'utf-8')) : []
     existing.push(log)
     fs.writeFileSync(logFile, JSON.stringify(existing, null, 2))
-  } catch {}
+  } catch (e) { console.error('writeRunLog failed:', e instanceof Error ? e.message : e) }
 }

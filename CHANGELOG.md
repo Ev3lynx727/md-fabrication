@@ -1,5 +1,33 @@
 # Changelog
 
+## [0.6.0] - 2026-06-16
+
+### Added
+
+- Pre-fork enhancement phase — stabilize module before forking into articpub-ai
+- Real mode transforms for blog (blank-line collapse + H1), newsletter (TL;DR auto-extract + blank collapse), tutorial (Prerequisites section + H1), landing (single blank-line collapse + H1)
+- Input validation for `--voice` flag — warns on unknown voice names
+- Voice profile type safety — `profile: VoiceProfile` instead of `profile: any` in assembly pipeline
+
+### Changed
+
+- Monolithic `src/md-fabrication.ts` completely removed — CLI now exclusively uses modular `src/cli/index.ts`
+- Hardcoded config fallback synced with `config.yaml` — 8 field-level discrepancies fixed across casual, professional, technical, personal-branding profiles
+- Frontmatter parsing switched from naive `line.indexOf(':')` to `yaml.load()`
+- `sentencesRestructured` counter now tracks `conjStart + sentStart` (was double-counting `conjunctionSoftened`)
+- 17 `any` types replaced with proper interfaces across config, assembly, CLI, wiki, hedging
+
+### Fixed
+
+- Contractions profile toggle now respected — was applying unconditionally
+- 5 empty catch blocks now log errors (session, wiki, assembly)
+- `heging.ts` callback type — removed `as any` cast, changed to `(...args: string[]) => string`
+
+### Removed
+
+- Duplicate `countTokens` in `src/core/token-budget.ts` — canonical version in `helpers.ts`
+- 4 unused `MD_FABRICATION_*` environment variables from `.env.example`
+
 ## [0.5.0] - 2026-06-13
 
 ### Added

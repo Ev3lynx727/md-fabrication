@@ -13,12 +13,13 @@ import { editDocs, updateIndex, updateLog, linkUp, ingest } from '../core/wiki.j
 import { fabricateText } from '../transforms/fabricate.js'
 import { countTokens, getPositionalArg, getPositionalArgs, getFlagArg } from '../core/helpers.js'
 import { getMode as resolveMode } from '../modes/index.js'
+import type { FabricationSummary, ImageRef, GraphFileResult } from '../core/types.js'
 
 const RED = '\x1b[31m'
 const GREEN = '\x1b[32m'
 const RESET = '\x1b[0m'
 
-function renderSummaryTable(summary: any): string {
+function renderSummaryTable(summary: FabricationSummary): string {
   return new AsciiTable3()
     .setHeading('Transformation', 'Count')
     .addRow('Sentences Restructured', summary.sentencesRestructured)
@@ -111,7 +112,7 @@ export function main(): void {
       const graph = buildGraph(results)
       const output = { graph, stats: { totalFiles: mdFiles.length, totalNodes: Object.keys(graph.nodes).length, totalEdges: graph.edges.length, orphans: findOrphans(graph).length }, scanErrors: scanErrors.length > 0 ? scanErrors : undefined, durationMs: Date.now() - startTime }
       if (jsonOnly) console.log(JSON.stringify(output, null, 2))
-      else { console.log('Graph for ' + targetDir); console.log('Files: ' + mdFiles.length + ', Nodes: ' + Object.keys(graph.nodes).length + ', Edges: ' + graph.edges.length); graph.edges.slice(0, 20).forEach((e: any) => console.log('  ' + e.source + ' -> ' + e.target + ' (' + e.type + ')')); if (graph.edges.length > 20) console.log('  ... and ' + (graph.edges.length - 20) + ' more') }
+      else { console.log('Graph for ' + targetDir); console.log('Files: ' + mdFiles.length + ', Nodes: ' + Object.keys(graph.nodes).length + ', Edges: ' + graph.edges.length); graph.edges.slice(0, 20).forEach((e: { source: string; target: string; type: string }) => console.log('  ' + e.source + ' -> ' + e.target + ' (' + e.type + ')')); if (graph.edges.length > 20) console.log('  ... and ' + (graph.edges.length - 20) + ' more') }
     } else if (orphansMode) {
       const graph = buildGraph(results)
       const orphans = findOrphans(graph)
@@ -120,11 +121,11 @@ export function main(): void {
     } else if (imageMapMode) {
       const imageMap = buildImageMap(results)
       if (jsonOnly) console.log(JSON.stringify({ imageMap, totalFiles: mdFiles.length, durationMs: Date.now() - startTime }, null, 2))
-      else { console.log('Local: ' + imageMap.local.length + ', Remote: ' + imageMap.remote.length + ', Bucket: ' + imageMap.bucket.length + ', Broken: ' + imageMap.broken.length); if (imageMap.broken.length > 0) { console.log('Broken:'); imageMap.broken.forEach((i: any) => console.log('  ' + i.url)) } }
+      else { console.log('Local: ' + imageMap.local.length + ', Remote: ' + imageMap.remote.length + ', Bucket: ' + imageMap.bucket.length + ', Broken: ' + imageMap.broken.length); if (imageMap.broken.length > 0) { console.log('Broken:'); imageMap.broken.forEach((i: ImageRef) => console.log('  ' + i.url)) } }
     } else if (backlinksTarget) {
       const backlinks = findBacklinks(results, backlinksTarget)
       if (jsonOnly) console.log(JSON.stringify({ target: backlinksTarget, count: backlinks.length }, null, 2))
-      else { if (backlinks.length === 0) console.log('No backlinks'); else backlinks.forEach((b: any) => console.log('  ' + b.fileName)) }
+      else { if (backlinks.length === 0) console.log('No backlinks'); else backlinks.forEach((b: GraphFileResult) => console.log('  ' + b.fileName)) }
     }
     return
   }
@@ -162,13 +163,15 @@ export function main(): void {
     const voiceIdx = process.argv.findIndex(arg => arg === '--voice')
     const hasExplicitVoice = voiceIdx > 0
     const voiceArg = hasExplicitVoice ? process.argv[voiceIdx + 1] || voiceCfg.default : ''
-    const voice = hasExplicitVoice && getValidVoices().includes(voiceArg) ? voiceArg : voiceCfg.default
+    const isValidVoice = getValidVoices().includes(voiceArg)
+    if (hasExplicitVoice && !isValidVoice) console.warn('Warning: unknown voice "' + voiceArg + '", falling back to "' + voiceCfg.default + '"')
+    const voice = hasExplicitVoice && isValidVoice ? voiceArg : voiceCfg.default
     const profile = voiceCfg.profiles[voice] || {}
     const fragments = gatherFragments(targetDir)
     if (fragments.length === 0) { console.error('Error: no .md files found'); process.exit(1) }
     const graph = buildDepGraph(fragments)
     let order: string[] = []
-    try { order = graph.overallOrder() } catch (e: any) { console.error('Error: cycle detected: ' + e.message); process.exit(1) }
+    try { order = graph.overallOrder() } catch (e: unknown) { console.error('Error: cycle detected: ' + (e instanceof Error ? e.message : String(e))); process.exit(1) }
     const trilogyMode = process.argv.includes('--trilogy')
     if (trilogyMode) {
       if (!dryRun && !applyMode) { console.error('Error: --trilogy requires --dry-run or --apply'); process.exit(1) }
@@ -250,7 +253,7 @@ export function main(): void {
     if (fragments.length === 0) { console.error('Error: no .md files found'); process.exit(1) }
     const graph = buildDepGraph(fragments)
     let order: string[] = []
-    try { order = graph.overallOrder() } catch (e: any) { console.error('Error: cycle detected: ' + e.message); process.exit(1) }
+    try { order = graph.overallOrder() } catch (e: unknown) { console.error('Error: cycle detected: ' + (e instanceof Error ? e.message : String(e))); process.exit(1) }
     if (jsonOnly) { console.log(JSON.stringify({ directory: targetDir, fragments: fragments.length, order, durationMs: Date.now() - startTime })) }
     else { console.log('Fragments: ' + fragments.length); console.log('Order: ' + order.join(' -> ')) }
     return
@@ -282,8 +285,11 @@ export function main(): void {
 
   const voiceCfg = loadVoiceConfig()
   const voiceIdx = process.argv.findIndex(arg => arg === '--voice')
-  const voiceArg = voiceIdx > 0 ? process.argv[voiceIdx + 1] || voiceCfg.default : voiceCfg.default
-  const voice = getValidVoices().includes(voiceArg) ? voiceArg : voiceCfg.default
+  const hasExplicitVoice = voiceIdx > 0
+  const voiceArg = hasExplicitVoice ? process.argv[voiceIdx + 1] || voiceCfg.default : voiceCfg.default
+  const isValidVoice = getValidVoices().includes(voiceArg)
+  if (hasExplicitVoice && !isValidVoice) console.warn('Warning: unknown voice "' + voiceArg + '", falling back to "' + voiceCfg.default + '"')
+  const voice = isValidVoice ? voiceArg : voiceCfg.default
   const profile = voiceCfg.profiles[voice] || {}
   const budgetIdx = process.argv.findIndex(arg => arg === '--budget')
   const budget = budgetIdx > 0 ? parseInt(process.argv[budgetIdx + 1] || '', 10) || 50000 : 50000

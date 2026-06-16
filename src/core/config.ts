@@ -1,7 +1,7 @@
 import * as fs from 'fs'
 import * as path from 'path'
 import * as yaml from 'js-yaml'
-import { VoiceConfig } from './types.js'
+import { VoiceConfig, VoiceProfile } from './types.js'
 import { PROJECT_ROOT } from './resolve-root.js'
 
 function resolveConfigPath(): string {
@@ -19,7 +19,7 @@ export function loadVoiceConfig(): VoiceConfig {
   if (VOICE_CONFIG) return VOICE_CONFIG
   try {
     const raw = fs.readFileSync(CONFIG_PATH, 'utf-8')
-    const parsed = yaml.load(raw) as any
+    const parsed = yaml.load(raw) as { voice?: { default?: string; profiles?: Record<string, VoiceProfile> }; timezone?: string }
     VOICE_CONFIG = {
       default: parsed.voice?.default || 'professional',
       profiles: parsed.voice?.profiles || {}
@@ -30,10 +30,10 @@ export function loadVoiceConfig(): VoiceConfig {
     VOICE_CONFIG = {
       default: 'professional',
       profiles: {
-        professional: { contractions: false, transitions: true, passiveToActive: true, conjunctionSoftening: true, pacing: true, repetitivePhrases: true, vocabularyDiversity: false, hedgePhrases: false, conjunctionStarts: false, sentenceVariety: false },
-        casual: { contractions: true, transitions: true, passiveToActive: true, conjunctionSoftening: true, pacing: true, repetitivePhrases: true, vocabularyDiversity: false, hedgePhrases: false, conjunctionStarts: false, sentenceVariety: false },
-        technical: { contractions: false, transitions: false, passiveToActive: true, conjunctionSoftening: false, pacing: false, repetitivePhrases: true, vocabularyDiversity: false, hedgePhrases: false, conjunctionStarts: false, sentenceVariety: false },
-        'personal-branding': { contractions: false, transitions: true, passiveToActive: true, conjunctionSoftening: true, pacing: true, repetitivePhrases: true, vocabularyDiversity: true, hedgePhrases: true, conjunctionStarts: true, sentenceVariety: true }
+        casual: { contractions: true, transitions: true, passiveToActive: true, conjunctionSoftening: true, pacing: true, repetitivePhrases: true, vocabularyDiversity: true, hedgePhrases: true, conjunctionStarts: true, sentenceVariety: true },
+        professional: { contractions: false, transitions: true, passiveToActive: true, conjunctionSoftening: true, pacing: true, repetitivePhrases: true, vocabularyDiversity: true, hedgePhrases: true, conjunctionStarts: false, sentenceVariety: true },
+        technical: { contractions: false, transitions: false, passiveToActive: true, conjunctionSoftening: false, pacing: false, repetitivePhrases: true, vocabularyDiversity: true, hedgePhrases: false, conjunctionStarts: false, sentenceVariety: false },
+        'personal-branding': { contractions: false, transitions: false, passiveToActive: true, conjunctionSoftening: true, pacing: true, repetitivePhrases: true, vocabularyDiversity: true, hedgePhrases: true, conjunctionStarts: false, sentenceVariety: true }
       }
     }
     return VOICE_CONFIG
@@ -49,10 +49,10 @@ export function getTimezone(): string | null {
   return TIMEZONE
 }
 
-export function getTomlConfig(tomlPath: string): Record<string, any> {
+export function getTomlConfig(tomlPath: string): Record<string, string> {
   try {
     const content = fs.readFileSync(tomlPath, 'utf-8')
-    const config: Record<string, any> = {}
+    const config: Record<string, string> = {}
     let inConfigSection = false
     content.split('\n').forEach(line => {
       const trimmed = line.trim()

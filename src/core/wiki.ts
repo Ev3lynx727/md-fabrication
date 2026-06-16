@@ -42,7 +42,7 @@ function extractTags(body: string, existingTags: string[]): string[] {
       for (const w of cleaned) { if (w.length > 3) tagSet.add(w) }
       if (cleaned.length > 0) tagSet.add(cleaned.join('-'))
     }
-  } catch {}
+  } catch { /* NLP tag extraction failed — skip */ }
   return [...tagSet].slice(0, 8)
 }
 
@@ -65,7 +65,7 @@ export function editDocs(dir: string): { changed: number; errors: string[] } {
     const depends = wikiRefs.map(r => r.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') + '.md').filter(r => entryNames.includes(r))
     const tags = extractTags(content, [])
     const description = extractDescription(content)
-    const fmObj: Record<string, any> = { title, description, tags, depends_on: depends, source: name }
+    const fmObj: Record<string, unknown> = { title, description, tags, depends_on: depends, source: name }
     const fmYaml = yaml.dump(fmObj)
     fs.writeFileSync(fullPath, '---\n' + fmYaml + '---\n\n' + content, 'utf-8')
     changed++
@@ -174,7 +174,7 @@ export function linkUp(dir: string): { linksRewired: number; headingsDeduped: nu
       return match
     })
     if (changed) {
-      const fmObj: Record<string, any> = { title: f.metadata.title, tags: f.metadata.tags, depends_on: f.metadata.depends_on }
+      const fmObj: Record<string, unknown> = { title: f.metadata.title, tags: f.metadata.tags, depends_on: f.metadata.depends_on }
       if (f.metadata.description) fmObj.description = f.metadata.description
       if (f.metadata.order != null) fmObj.order = f.metadata.order
       if (f.metadata.status) fmObj.status = f.metadata.status
@@ -198,7 +198,7 @@ export function ingest(rawFile: string, targetDir: string): { fragment: string; 
   const tags = fm.metadata && fm.metadata.tags ? (Array.isArray(fm.metadata.tags) ? fm.metadata.tags : [fm.metadata.tags]) : extractTags(body, [])
   const description = extractDescription(body)
   const source = path.basename(rawFile)
-  const fmObj: Record<string, any> = { title, description, tags, depends_on: [], source, status: 'draft' }
+  const fmObj: Record<string, unknown> = { title, description, tags, depends_on: [], source, status: 'draft' }
   if (fm.metadata && fm.metadata.date) fmObj.date = fm.metadata.date
   if (fm.metadata && fm.metadata.author) fmObj.author = fm.metadata.author
   const fmYaml = yaml.dump(fmObj)

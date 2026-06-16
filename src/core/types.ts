@@ -1,5 +1,5 @@
 export interface FrontmatterResult {
-  metadata: Record<string, string> | null
+  metadata: Record<string, unknown> | null
   content: string
   raw: string
 }

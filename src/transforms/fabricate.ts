@@ -19,7 +19,7 @@ export function fabricateText(content: string, profile: VoiceProfile): {
 
   if (profile.conjunctionSoftening) { const t = softenConjunctions(text); text = t.result; changes.conj = t.changes }
   if (profile.passiveToActive) { const t = passiveToActive(text); text = t.result; changes.passive = t.changes }
-  const t3 = applyContractions(text, profile); text = t3.result; changes.cont = t3.changes
+  if (profile.contractions) { const t = applyContractions(text, profile); text = t.result; changes.cont = t.changes }
   if (profile.repetitivePhrases) { const t = removeRepetitivePhrases(text); text = t.result }
   if (profile.transitions) { const t = addTransitions(text); text = t.result; changes.trans = t.changes }
   if (profile.pacing) { const t = adjustPacing(text); text = t.result; changes.pace = t.changes }
@@ -31,7 +31,7 @@ export function fabricateText(content: string, profile: VoiceProfile): {
   return {
     transformed: text,
     summary: {
-      sentencesRestructured: changes.conj,
+      sentencesRestructured: changes.conjStart + changes.sentStart,
       transitionsAdded: changes.trans,
       contractionsApplied: changes.cont,
       passiveToActive: changes.passive,
