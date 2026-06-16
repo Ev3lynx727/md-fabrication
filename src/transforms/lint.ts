@@ -67,7 +67,7 @@ export function fixMarkdown(text: string): { fixed: string; fixCount: number } {
     if (idx < 0 || idx >= lines.length) continue
     const line = lines[idx]
     const col = err.fixInfo!.editColumn
-    const del = err.fixInfo!.deleteCount
+    const del = err.fixInfo!.deleteCount ?? 0
     const ins = err.fixInfo!.insertText || ''
 
     if (col === undefined) {

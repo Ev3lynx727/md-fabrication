@@ -305,19 +305,100 @@ export function main(): void {
 
   // --- lint ---
   program.command('lint')
-    .description('Validate fragments')
-    .argument('<directory>', 'Directory to lint')
+    .description('Validate markdown files — fragment lint for directories, markdownlint for single files')
+    .argument('<target>', 'File or directory to lint')
     .option('-j, --json', 'Output as JSON')
-    .action((dir: string, opts: { json?: boolean }) => {
+    .option('-f, --fix', 'Auto-fix markdownlint issues')
+    .action((target: string, opts: { json?: boolean; fix?: boolean }) => {
       const startTime = Date.now()
-      const parsed = LintArgs.parse({ directory: dir, ...opts })
-      requireDir(parsed.directory)
-      const { entries, errors, warnings, infos } = lintDirectory(parsed.directory)
-      if (parsed.json) console.log(JSON.stringify({ directory: parsed.directory, entries, errors, warnings, infos, durationMs: Date.now() - startTime }, null, 2))
-      else {
-        console.log('Lint results for ' + parsed.directory)
-        console.log('Errors: ' + errors + ', Warnings: ' + warnings + ', Info: ' + infos)
-        for (const e of entries) { const prefix = e.severity === 'error' ? 'X' : e.severity === 'warning' ? '!' : 'i'; const loc = e.file ? e.file + ': ' : ''; console.log('  ' + prefix + ' [' + e.severity + '] ' + loc + e.message) }
+      const parsed = LintArgs.parse({ target, ...opts })
+      const isFile = fs.statSync(parsed.target).isFile()
+
+      if (isFile) {
+        const content = fs.readFileSync(parsed.target, 'utf-8')
+        const lintResult = lintMarkdown(content)
+
+        let fixCount = 0
+        if (parsed.fix) {
+          const { fixed, fixCount: count } = fixMarkdown(content)
+          if (count > 0) {
+            fs.writeFileSync(parsed.target, fixed, 'utf-8')
+            fixCount = count
+          }
+        }
+
+        if (parsed.json) {
+          console.log(JSON.stringify({
+            file: parsed.target,
+            issues: lintResult.issues,
+            errorCount: lintResult.errorCount,
+            warningCount: lintResult.warningCount,
+            fixed: fixCount,
+            durationMs: Date.now() - startTime,
+          }, null, 2))
+        } else {
+          console.log('Lint results for ' + parsed.target)
+          console.log('Errors: ' + lintResult.errorCount + ', Warnings: ' + lintResult.warningCount)
+          if (lintResult.issues.length > 0) {
+            for (const i of lintResult.issues) {
+              console.log('  ! [' + i.ruleNames.join(', ') + '] line ' + i.lineNumber + ': ' + i.errorDetail)
+            }
+          } else {
+            console.log('  No issues found')
+          }
+          if (fixCount > 0) console.log('Auto-fixed: ' + fixCount + ' issue(s)')
+        }
+      } else {
+        requireDir(parsed.target)
+        const { entries, errors, warnings, infos } = lintDirectory(parsed.target)
+
+        const mdFiles = fs.readdirSync(parsed.target).filter(f => f.endsWith('.md'))
+        const mlEntries: { file: string; lineNumber: number; rule: string; detail: string; severity: string }[] = []
+        let mlErrors = 0
+        let mlWarnings = 0
+        for (const f of mdFiles) {
+          const fp = path.join(parsed.target, f)
+          const content = fs.readFileSync(fp, 'utf-8')
+          const result = lintMarkdown(content, f)
+          for (const issue of result.issues) {
+            mlEntries.push({ file: f, lineNumber: issue.lineNumber, rule: issue.ruleNames.join(', '), detail: issue.errorDetail, severity: 'warning' })
+          }
+          mlErrors += result.errorCount
+          mlWarnings += result.warningCount
+
+          if (parsed.fix) {
+            const { fixed, fixCount } = fixMarkdown(content)
+            if (fixCount > 0) fs.writeFileSync(fp, fixed, 'utf-8')
+          }
+        }
+
+        const totalEntries = entries.length + mlEntries.length
+        const totalErrors = errors + mlErrors
+        const totalWarnings = warnings + mlWarnings
+        const fixLabel = parsed.fix ? ' (--fix active)' : ''
+
+        if (parsed.json) {
+          console.log(JSON.stringify({
+            directory: parsed.target,
+            fragmentIssues: entries,
+            markdownlintIssues: mlEntries,
+            errors: totalErrors,
+            warnings: totalWarnings,
+            infos,
+            durationMs: Date.now() - startTime,
+          }, null, 2))
+        } else {
+          console.log('Lint results for ' + parsed.target + fixLabel)
+          console.log('Fragment lint: ' + errors + ' errors, ' + warnings + ' warnings, ' + infos + ' info')
+          for (const e of entries) { const prefix = e.severity === 'error' ? 'X' : e.severity === 'warning' ? '!' : 'i'; const loc = e.file ? e.file + ': ' : ''; console.log('  ' + prefix + ' [' + e.severity + '] ' + loc + e.message) }
+          if (mlEntries.length > 0) {
+            console.log('Markdownlint: ' + mlErrors + ' errors, ' + mlWarnings + ' warnings')
+            for (const m of mlEntries.slice(0, 30)) {
+              console.log('  ! [' + m.rule + '] ' + m.file + ':' + m.lineNumber + ' — ' + m.detail)
+            }
+            if (mlEntries.length > 30) console.log('  ... and ' + (mlEntries.length - 30) + ' more issues')
+          }
+        }
       }
     })
 

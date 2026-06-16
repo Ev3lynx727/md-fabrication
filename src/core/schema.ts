@@ -44,7 +44,8 @@ export const AssembleArgs = z.object({
 })
 
 export const LintArgs = z.object({
-  directory: z.string(),
+  target: z.string(),
+  fix: z.boolean().default(false),
   json: z.boolean().default(false),
 })
 
