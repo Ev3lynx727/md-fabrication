@@ -6,7 +6,8 @@
   "module": "dist/esm/cli/index.js",
   "types": "dist/cjs/cli/index.d.ts",
   "bin": {
-    "md-fabrication": "./dist/cjs/cli/index.js"
+    "md-fabrication": "./dist/cjs/cli/index.js",
+    "mdfab": "./dist/cjs/cli/index.js"
   },
   "scripts": {
     "build": "npm run build:cjs && npm run build:esm",

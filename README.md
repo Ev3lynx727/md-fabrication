@@ -62,6 +62,9 @@ npm run build
 
 ```bash
 node dist/cjs/cli/index.js fabricate README.md --json --dry-run
+
+# Or if installed globally:
+mdfab fabricate README.md --dry-run
 ```
 
 ---
@@ -70,7 +73,7 @@ node dist/cjs/cli/index.js fabricate README.md --json --dry-run
 
 ### Commands
 
-All operations are invoked as subcommands. Every subcommand supports `--json` for structured output and `--help` for usage details.
+All operations are invoked as subcommands. Every subcommand supports `--json` for structured output and `--help` for usage details. Use `mdfab` as a shorthand alias for `md-fabrication`.
 
 | Command | Description |
 |---------|-------------|
@@ -195,6 +198,9 @@ md-fabrication fabricate article.md --dry-run --voice personal-branding
 ### Examples
 
 ```bash
+# Shorthand alias (mdfab == md-fabrication)
+mdfab fabricate article.md --json
+
 # Analyze an article for humanization suggestions
 md-fabrication fabricate article.md --json
 
