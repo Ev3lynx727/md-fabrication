@@ -8,3 +8,18 @@
 {"id": "cs-008", "word": "Still", "weight": 0.1, "tags": ["continuative"]}
 {"id": "cs-009", "word": "Then", "weight": 0.1, "tags": ["sequential"]}
 {"id": "cs-010", "word": "Though", "weight": 0.08, "tags": ["concessive"]}
+{"id": "cs-011", "word": "Heck", "weight": 0.06, "tags": ["additive", "informal"]}
+{"id": "cs-012", "word": "Look", "weight": 0.08, "tags": ["direct-address", "informal"]}
+{"id": "cs-013", "word": "Sure", "weight": 0.07, "tags": ["concessive", "informal"]}
+{"id": "cs-014", "word": "Now", "weight": 0.12, "tags": ["temporal", "discourse"]}
+{"id": "cs-015", "word": "Here's_the_thing", "weight": 0.1, "tags": ["opinion", "personal-branding"]}
+{"id": "cs-016", "word": "Here's_the_deal", "weight": 0.08, "tags": ["opinion", "personal-branding"]}
+{"id": "cs-017", "word": "Here's_why", "weight": 0.1, "tags": ["explanatory", "personal-branding"]}
+{"id": "cs-018", "word": "Honestly", "weight": 0.08, "tags": ["opinion", "personal-branding"]}
+{"id": "cs-019", "word": "Frankly", "weight": 0.08, "tags": ["opinion", "personal-branding"]}
+{"id": "cs-020", "word": "Truth_is", "weight": 0.08, "tags": ["opinion", "personal-branding"]}
+{"id": "cs-021", "word": "Bottom_line", "weight": 0.08, "tags": ["conclusive", "personal-branding"]}
+{"id": "cs-022", "word": "Worse", "weight": 0.06, "tags": ["contrast", "escalation"]}
+{"id": "cs-023", "word": "Better", "weight": 0.06, "tags": ["contrast", "optimistic"]}
+{"id": "cs-024", "word": "Which_means", "weight": 0.08, "tags": ["consequential", "explanatory"]}
+{"id": "cs-025", "word": "Which_is_why", "weight": 0.08, "tags": ["explanatory", "causal"]}

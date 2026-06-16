@@ -18,6 +18,7 @@ voice:
       hedgePhrases: true
       conjunctionStarts: true
       sentenceVariety: true
+      bannedWords: true
     professional:
       contractions: false
       transitions: true
@@ -29,6 +30,7 @@ voice:
       hedgePhrases: true
       conjunctionStarts: false
       sentenceVariety: true
+      bannedWords: true
     technical:
       contractions: false
       transitions: false
@@ -41,16 +43,17 @@ voice:
       conjunctionStarts: false
       sentenceVariety: false
     personal-branding:
-      contractions: false
-      transitions: false
+      contractions: true
+      transitions: true
       passiveToActive: true
       conjunctionSoftening: true
       pacing: true
       repetitivePhrases: true
       vocabularyDiversity: true
-      hedgePhrases: true
-      conjunctionStarts: false
+      hedgePhrases: false
+      conjunctionStarts: true
       sentenceVariety: true
+      bannedWords: true
 
 budget:
   default: 50000

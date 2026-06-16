@@ -30,10 +30,10 @@ export function loadVoiceConfig(): VoiceConfig {
     VOICE_CONFIG = {
       default: 'professional',
       profiles: {
-        casual: { contractions: true, transitions: true, passiveToActive: true, conjunctionSoftening: true, pacing: true, repetitivePhrases: true, vocabularyDiversity: true, hedgePhrases: true, conjunctionStarts: true, sentenceVariety: true },
-        professional: { contractions: false, transitions: true, passiveToActive: true, conjunctionSoftening: true, pacing: true, repetitivePhrases: true, vocabularyDiversity: true, hedgePhrases: true, conjunctionStarts: false, sentenceVariety: true },
-        technical: { contractions: false, transitions: false, passiveToActive: true, conjunctionSoftening: false, pacing: false, repetitivePhrases: true, vocabularyDiversity: true, hedgePhrases: false, conjunctionStarts: false, sentenceVariety: false },
-        'personal-branding': { contractions: false, transitions: false, passiveToActive: true, conjunctionSoftening: true, pacing: true, repetitivePhrases: true, vocabularyDiversity: true, hedgePhrases: true, conjunctionStarts: false, sentenceVariety: true }
+        casual: { contractions: true, transitions: true, passiveToActive: true, conjunctionSoftening: true, pacing: true, repetitivePhrases: true, vocabularyDiversity: true, hedgePhrases: true, conjunctionStarts: true, sentenceVariety: true, bannedWords: true },
+        professional: { contractions: false, transitions: true, passiveToActive: true, conjunctionSoftening: true, pacing: true, repetitivePhrases: true, vocabularyDiversity: true, hedgePhrases: true, conjunctionStarts: false, sentenceVariety: true, bannedWords: true },
+        technical: { contractions: false, transitions: false, passiveToActive: true, conjunctionSoftening: false, pacing: false, repetitivePhrases: true, vocabularyDiversity: true, hedgePhrases: false, conjunctionStarts: false, sentenceVariety: false, bannedWords: true },
+        'personal-branding': { contractions: true, transitions: true, passiveToActive: true, conjunctionSoftening: true, pacing: true, repetitivePhrases: true, vocabularyDiversity: true, hedgePhrases: false, conjunctionStarts: true, sentenceVariety: true, bannedWords: true }
       }
     }
     return VOICE_CONFIG
